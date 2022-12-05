@@ -1,0 +1,113 @@
+.login-page {
+  margin-top: 10%;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.loginDetails {
+  background: rgba(233, 242, 247, 0.69);
+  width: 25%;
+  height: 65vh;
+  border-bottom: 4px solid #958010;
+  border-radius: 0px 0px 30px 30px;
+}
+.loginImg img {
+  height: 450px;
+  width: 500px;
+}
+.loginHeader span {
+  width: 50%;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+.form-group h2 {
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.loginHeader {
+  border: 2px solid #2560a6;
+  display: flex;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 20px;
+  justify-content: space-around;
+  /* column-gap: 10px;
+  padding: 10px; */
+  align-items: center;
+}
+
+.headerbtnL {
+  background: white;
+}
+.headerbtnS {
+  background: #2560a6;
+  color: white;
+}
+.form {
+  margin-top: 20px;
+  padding: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.form input {
+  border-radius: 30px;
+  border: none;
+  margin: 0px 20px;
+  padding: 10px;
+}
+.form input:focus {
+  border: none;
+  outline: 2px solid #29bec9;
+}
+.form-group h3 {
+  font-family: arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: #2049b4;
+  margin-left: 3rem;
+}
+.form-group h3:hover {
+  color: #05363a;
+  text-decoration: underline;
+}
+.lgbtn {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.lgbtn button {
+  height: 35px;
+}
+.signinwithgoogle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 35px;
+  width: 100%;
+}
+.signinwithgoogle img {
+  height: 100%;
+  margin: 30px 0px;
+  cursor: pointer;
+}
+.sgsup img {
+  margin: 10px 0px;
+}
