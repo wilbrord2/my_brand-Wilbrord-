@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/myStyle.css" />
+    <link rel="stylesheet" href="/components/mobilenavbar.css" />
   </head>
   <body>
     <header>
@@ -44,6 +45,52 @@
           </ul>
         </div>
       </div>
+
+      <!-- mobile nav-bar -->
+      <div class="mobileNavBar hidden">
+        <div id="menuBtn" class="mobileMenu">
+          <iconify-icon
+            inline
+            icon="mdi:microsoft-xbox-controller-menu"
+            style="color: #1a559b"
+            width="30"
+            height="30"
+          ></iconify-icon>
+        </div>
+        <div class="mobileAccount">
+          <a href="/login.html">
+            <iconify-icon
+              inline
+              icon="material-symbols:account-circle"
+              style="color: #1a559b"
+              width="30"
+              height="30"
+            ></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div id="menulist" class="menu hidde">
+        <div class="mobilenavlist">
+          <div class="navbarLinks">
+            <ul>
+              <a href="#Home-page"> <li>Home</li></a>
+              <a href="#AboutPage"> <li>About</li></a>
+              <a href="#Skills-page"><li>Skills</li></a>
+              <a href="#Portfolio-page"><li>Portfolio</li></a>
+              <a href="#Blog-page"><li>Blog</li></a>
+              <a href="#Contact-page"><li>Contact</li></a>
+            </ul>
+          </div>
+          <div id="closeBtn" class="closeBtn">
+            <iconify-icon
+              icon="material-symbols:close"
+              style="color: #1a559b"
+              width="25"
+              height="25"
+            ></iconify-icon>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main id="Home-page">
@@ -51,6 +98,9 @@
         <img src="Images/portfolio.png" alt="myProfile_picture" />
       </aside>
       <div class="main">
+        <div class="mobileProfile hidden">
+          <img src="Images/mobilep.png" alt="myProfile_picture" />
+        </div>
         <h2>Hello, <span>I am</span></h2>
         <h1>Wilbrord Ibyimana</h1>
         <p>
@@ -98,7 +148,7 @@
           <div class="my-image">
             <img src="/Images/test1.png" alt="profile.png" />
           </div>
-          <p>
+          <p class="myDescription">
             Front-end & UI&UX developer from Kigali, Rwanda. I have rich
             experience in HTML, CSS and JS, also I am good at playing guitar . I
             love to talk with you about our unique.
@@ -117,7 +167,7 @@
               <li><span>Address: </span>Nyarugenge, Kigali, Rwanda</li>
             </ul>
           </div>
-          <button class="Btn btn-display cvBtn">
+          <button class="Btn cvBtn btn-display">
             Download cv
             <iconify-icon
               icon="material-symbols:download-rounded"
@@ -128,7 +178,7 @@
           </button>
         </div>
       </div>
-      <div class="section-end">
+      <div class="section-end About-section-end">
         <ul>
           <li>
             <iconify-icon
@@ -306,7 +356,9 @@
         </div>
       </div>
       <div class="btn-viewMore">
-        <button class="Btn">View more</button>
+        <a href="portofolio.html">
+          <button class="Btn">View more</button>
+        </a>
       </div>
     </section>
 
@@ -476,28 +528,28 @@
               <li>
                 <iconify-icon
                   icon="material-symbols:location-on"
-                  style="color: #1a559b"
+                  style="color: white"
                 ></iconify-icon>
                 Kigali-Rwanda
               </li>
               <li>
                 <iconify-icon
                   icon="material-symbols:call"
-                  style="color: #1a559b"
+                  style="color: white"
                 ></iconify-icon>
                 +250780505303
               </li>
               <li>
                 <iconify-icon
                   icon="material-symbols:alternate-email"
-                  style="color: #1a559b"
+                  style="color: white"
                 ></iconify-icon>
                 bwilbrord@gmail.com
               </li>
               <li>
                 <iconify-icon
                   icon="mdi:linkedin"
-                  style="color: #1a559b"
+                  style="color: white"
                 ></iconify-icon>
                 wilbrordibyimana
               </li>
@@ -545,7 +597,7 @@
               <iconify-icon
                 inline
                 icon="mdi:github"
-                style="color: #1a559b"
+                style="color: white"
                 width="30"
                 height="30"
               ></iconify-icon>
@@ -554,7 +606,7 @@
               <iconify-icon
                 inline
                 icon="mdi:instagram"
-                style="color: #1a559b"
+                style="color: white"
                 width="30"
                 height="30"
               ></iconify-icon>
@@ -563,7 +615,7 @@
               <iconify-icon
                 inline
                 icon="mdi:twitter"
-                style="color: #1a559b"
+                style="color: white"
                 width="30"
                 height="30"
               ></iconify-icon>
@@ -572,7 +624,7 @@
               <iconify-icon
                 inline
                 icon="ic:baseline-facebook"
-                style="color: #1a559b"
+                style="color: white"
                 width="30"
                 height="30"
               ></iconify-icon>
@@ -582,11 +634,14 @@
       </div>
     </section>
 
-    <!-- <footer>
-      <div class="footerBg">
-        <img src="/Images/11219.jpg" alt="" />
+    <footer>
+      <div class="copyright">
+        <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
       </div>
-    </footer> -->
+    </footer>
+
+    <!-- js section -->
+    <script src="/js/index.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>
