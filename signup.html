@@ -7,6 +7,7 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/login.css" />
     <link rel="stylesheet" href="/myStyle.css" />
+    <link rel="stylesheet" href="/components/mobilenavbar.css" />
   </head>
   <body>
     <header>
@@ -27,12 +28,12 @@
           <div class="navBarText">
             <ul>
               <a href="index.html"> <li>Home</li></a>
-              <a href="#AboutPage"> <li>About</li></a>
-              <a href="#Skills-page"><li>Skills</li></a>
+              <a href="index.html"> <li>About</li></a>
+              <a href="index.html"><li>Skills</li></a>
 
               <a href="portofolio.html"><li>Portfolio</li></a>
-              <a href="#Blog-page"><li>Blog</li></a>
-              <a href="#Contact-page"><li>Contact</li></a>
+              <a href="blog.html"><li>Blog</li></a>
+              <a href="index.html"><li>Contact</li></a>
             </ul>
           </div>
         </div>
@@ -45,6 +46,51 @@
               <li><button class="btn btn-2">Login</button></li></a
             >
           </ul>
+        </div>
+      </div>
+      <!-- mobile nav-bar -->
+      <div class="mobileNavBar hidden">
+        <div id="menuBtn" class="mobileMenu">
+          <iconify-icon
+            inline
+            icon="mdi:microsoft-xbox-controller-menu"
+            style="color: #1a559b"
+            width="30"
+            height="30"
+          ></iconify-icon>
+        </div>
+        <div class="mobileAccount">
+          <a href="/login.html">
+            <iconify-icon
+              inline
+              icon="material-symbols:account-circle"
+              style="color: #1a559b"
+              width="30"
+              height="30"
+            ></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div id="menulist" class="menu hidde">
+        <div class="mobilenavlist">
+          <div class="navbarLinks">
+            <ul>
+              <a href="index.html"> <li>Home</li></a>
+              <a href="index.html"> <li>About</li></a>
+              <a href="index.html"><li>Skills</li></a>
+              <a href="portofolio.html"><li>Portfolio</li></a>
+              <a href="blog.html"><li>Blog</li></a>
+              <a href="index.html"><li>Contact</li></a>
+            </ul>
+          </div>
+          <div id="closeBtn" class="closeBtn">
+            <iconify-icon
+              icon="material-symbols:close"
+              style="color: #1a559b"
+              width="25"
+              height="25"
+            ></iconify-icon>
+          </div>
         </div>
       </div>
     </header>
@@ -86,12 +132,11 @@
       </div>
     </section>
     <footer>
-      <section>
-        <div class="copyright">
-          <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
-        </div>
-      </section>
+      <div class="copyright">
+        <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
+      </div>
     </footer>
+    <script src="/js/index.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>

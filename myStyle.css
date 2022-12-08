@@ -670,6 +670,9 @@ li span {
 
 /* Footer css */
 footer {
+  /* position: absolute;
+  bottom: 0px;
+  width: 100%; */
   background-color: rgb(3, 3, 29);
   padding: 2rem 3rem 1.5rem 3rem;
 }
@@ -776,6 +779,9 @@ footer {
   .contact-info {
     display: none;
   }
+  #Portfolio-page {
+    margin-top: 70px;
+  }
   section {
     padding: 10px 5px;
     margin-top: 30px;
@@ -807,8 +813,10 @@ footer {
     width: 100%;
     height: 100%;
   }
+  .btn-exp {
+    left: 30%;
+  }
 }
-
 @media screen and (max-width: 450px) {
   main {
     height: 100vh;
@@ -818,5 +826,8 @@ footer {
   }
   .contact-message {
     width: 90%;
+  }
+  .btn-exp {
+    left: 20%;
   }
 }
