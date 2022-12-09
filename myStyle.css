@@ -56,7 +56,7 @@ header {
 }
 .navBarText {
   display: grid;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 .container ul {
   display: flex;
@@ -158,7 +158,7 @@ main {
 }
 .main h1 {
   color: #165299;
-  font-size: 45px;
+  font-size: 4vw;
   font-weight: border;
   line-height: 1.5;
 }
@@ -413,7 +413,7 @@ li span {
 .container-portfolio {
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   /* justify-content: space-evenly; */
   margin: 50px 0px 25px 20px;
@@ -757,6 +757,9 @@ footer {
   .btn-display {
     display: none;
   }
+  .commentContainer button {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 730px) {
@@ -772,7 +775,7 @@ footer {
   .containerSkills {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   .About-section-end ul {
     justify-content: center;
@@ -800,6 +803,18 @@ footer {
   .card-body {
     margin-bottom: 2rem;
   }
+  .card-border {
+    border-radius: 0px;
+    height: 70%;
+  }
+  .commentContainer {
+    height: fit-content;
+    width: 90%;
+  }
+  .commentContainer input {
+    width: 90%;
+  }
+
   .contact-message {
     width: 80%;
   }
