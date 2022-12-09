@@ -126,10 +126,10 @@ iconify-icon {
   transition: 0.3s linear;
   border: 2px solid #165299;
 }
-iconify-icon:hover {
+/* iconify-icon:hover {
   transition: all 0.5s ease-in-out;
   transform: rotate(359deg);
-}
+} */
 
 /* main css */
 
@@ -549,7 +549,7 @@ li span {
   background-image: url(./Images/contactUsImage.png);
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(109px);
+  /* backdrop-filter: blur(109px); */
 }
 
 #Contact-page h1 {
@@ -831,13 +831,19 @@ footer {
     width: 100%;
     height: 100%;
   }
-  /* .btn-exp {
-    left: 30%;
-  } */
+  .send-message {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 450px) {
   main {
     height: 100vh;
+  }
+  .container-portfolio {
+    margin: 50px 0px 25px 0px;
+  }
+  .card {
+    width: 95%;
   }
   .container-Contact {
     margin: 20px 10px;
@@ -851,6 +857,7 @@ footer {
   }
   .description {
     width: 90%;
+    margin: 0px auto;
     border-bottom: none;
   }
   .section-main {
