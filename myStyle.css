@@ -425,6 +425,11 @@ li span {
   border-radius: 10px 10px 30px 30px;
   filter: drop-shadow(10px 20px 50px #d5d7dd);
 }
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 20px 11px rgb(0 0 0 / 12%);
+  transition: all 0.3s;
+}
 .card-logo img {
   width: -webkit-fill-available;
   height: fit-content;
@@ -543,7 +548,16 @@ li span {
   margin-right: 4px;
   border: 1px solid;
 }
-
+.date {
+  font-size: 10px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
 /* ***************Contact css********** */
 #Contact-page {
   background-image: url(./Images/contactUsImage.png);
