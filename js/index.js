@@ -1,4 +1,4 @@
-"use strick";
+"use strict";
 
 const menuBtn = document.getElementById("menuBtn");
 const menilist = document.getElementById("menulist");
