@@ -124,7 +124,7 @@ aside {
   margin-top: 8px;
   padding-left: 2vw;
 }
-.menu li:active {
+.active {
   border-left: 4px solid rgb(211, 43, 1) !important;
 }
 .menu li:hover {
@@ -180,7 +180,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 2rem;
   margin-top: 3rem;
   flex-wrap: wrap;
 }
@@ -222,7 +222,8 @@ main {
   line-height: 20px;
   color: #353131;
 }
-.list-of-all-messages li {
+.list-of-all-messages li,
+.list-of-all-comments li {
   padding: 5px;
   border-bottom: 1px solid #80808021;
   display: flex;
@@ -246,10 +247,19 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.username h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
 .comments-time {
   color: #999;
-  font-size: 10px;
-  padding: 10px 10px 0px 10px;
+  font-size: 11px;
+  padding: 6px;
 }
 
 /* main section end */
