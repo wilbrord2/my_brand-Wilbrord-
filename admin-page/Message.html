@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/message.css" />
   </head>
   <body>
     <header>
@@ -64,8 +65,8 @@
         </div>
         <div class="menu">
           <ul>
-            <a href="#dashboard"><li class="active">Dashboard</li></a>
-            <a href="/admin-page/Message.html"><li>Message</li></a>
+            <a href="/admin-page/dashboard.html"><li>Dashboard</li></a>
+            <a href="#Message-page"><li class="active">Message</li></a>
             <a href=""><li>View list of all article</li></a>
             <a href=""> <li>Create new article</li></a>
             <a href=""> <li>List of clients</li></a>
@@ -74,59 +75,18 @@
       </aside>
       <main>
         <section class="statistics">
-          <div class="stati message-number">
-            <span
-              ><iconify-icon
-                inline
-                icon="ic:baseline-message"
-                style="color: #1a559b"
-                width="40"
-              ></iconify-icon
-            ></span>
-            <span class="stati-descr">
-              <div class="stati-number"><h2>84</h2></div>
-              <div class="stati-description"><h4>message</h4></div>
-            </span>
-          </div>
-          <div class="stati comments-number">
-            <span>
-              <iconify-icon
-                inline
-                icon="fa-solid:comments"
-                style="color: #1a559b"
-                width="40"
-              ></iconify-icon>
-            </span>
-            <span class="stati-descr">
-              <div class="stati-number"><h2>100</h2></div>
-              <div class="stati-description"><h4>comments</h4></div>
-            </span>
-          </div>
-          <div class="stati clients-number">
-            <span
-              ><iconify-icon
-                inline
-                icon="mdi:user-group"
-                style="color: #1a559b"
-                width="40"
-              ></iconify-icon>
-            </span>
-            <span class="stati-descr">
-              <div class="stati-number"><h2>30</h2></div>
-              <div class="stati-description"><h4>clients</h4></div>
-            </span>
-          </div>
+          <h1>Message from Clients</h1>
         </section>
         <section class="user-request">
           <div class="list-of-message">
             <div class="message-title">
               <span class="title"><h3>New Messages</h3></span>
               <span class="view-more"
-                ><h4>view more</h4>
+                ><h4>Sort by</h4>
                 <span class="stati-descr">
                   <iconify-icon
                     inline
-                    icon="material-symbols:arrow-right-rounded"
+                    icon="material-symbols:arrow-drop-down-rounded"
                     style="color: #585454"
                     width="20"
                   ></iconify-icon>
@@ -214,101 +174,8 @@
               </ul>
             </div>
           </div>
-          <div class="list-of-comments">
-            <div class="message-title">
-              <span class="title"><h3>Most popular Article</h3></span>
-              <span class="view-more"
-                ><h4>view more</h4>
-                <span class="stati-descr">
-                  <iconify-icon
-                    inline
-                    icon="material-symbols:arrow-right-rounded"
-                    style="color: #585454"
-                    width="20"
-                  ></iconify-icon>
-                </span>
-              </span>
-            </div>
-            <div class="list-of-all-comments">
-              <ul>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">5min ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">1hr ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">1min ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">17min ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="chat-logo">
+            <img src="/Images/undraw_Chatting_re_j55r.png" alt="" />
           </div>
         </section>
       </main>

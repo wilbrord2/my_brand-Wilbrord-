@@ -559,15 +559,16 @@ li span {
   justify-content: flex-end;
 }
 /* ***************Contact css********** */
-#Contact-page {
+.Contact-page {
   background-image: url(./Images/contactUsImage.png);
   background-repeat: no-repeat;
   background-size: cover;
   /* backdrop-filter: blur(109px); */
 }
 
-#Contact-page h1 {
+.Contact-page h1 {
   color: #fff;
+  margin-top: 2rem;
 }
 .container-Contact {
   display: flex;
@@ -804,7 +805,7 @@ footer {
   }
   section {
     padding: 10px 5px;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .section-title {
     font-size: 20px;

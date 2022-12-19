@@ -140,8 +140,8 @@
         ></a>
       </div>
     </main>
-
-    <section id="AboutPage">
+    <div id="AboutPage"></div>
+    <section>
       <div class="section-title">
         <h1>About Me</h1>
       </div>
@@ -214,8 +214,8 @@
         </ul>
       </div>
     </section>
-
-    <section id="Skills-page">
+    <div id="Skills-page"></div>
+    <section>
       <div class="section-title">
         <h1>Skills</h1>
       </div>
@@ -261,8 +261,8 @@
         </div>
       </div>
     </section>
-
-    <section id="Portfolio-page">
+    <div id="Portfolio-page"></div>
+    <section>
       <div class="section-title">
         <h1>My work</h1>
       </div>
@@ -364,8 +364,8 @@
         </a>
       </div>
     </section>
-
-    <section id="Blog-page">
+    <div id="Blog-page"></div>
+    <section>
       <div class="section-title">
         <h1>Blogs</h1>
       </div>
@@ -541,7 +541,8 @@
         ></a>
       </div>
     </section>
-    <section id="Contact-page">
+    <div id="Contact-page"></div>
+    <section class="Contact-page">
       <div class="section-title"><h1>Contact ME</h1></div>
       <div class="nav-blog">
         <h2>Get in touch</h2>
@@ -585,28 +586,55 @@
           </div>
         </div>
         <div class="contact-message">
-          <form action="">
+          <form id="contactForm" action="">
             <div class="messenger-names">
               <div class="fname">
                 <label for="First Name">First Name</label>
-                <input type="text" name="" id="" placeholder="First name" />
+                <input
+                  class="clear"
+                  type="text"
+                  name=""
+                  id="fname"
+                  placeholder="First name"
+                  required
+                />
               </div>
               <div class="lname">
                 <label for="Second Name">Second Name</label>
-                <input type="text" name="" id="" placeholder="Second name" />
+                <input
+                  class="clear"
+                  type="text"
+                  name=""
+                  id="sname"
+                  placeholder="Second name"
+                  required
+                />
               </div>
             </div>
             <div class="messenger-message">
               <div class="fname messenger-subject">
                 <label for="Subject">Subject</label>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id="subject"
+                  class="clear"
+                  required
+                />
               </div>
               <div class="lname">
                 <label for="Message"> Message</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea
+                  name=""
+                  id="message"
+                  class="clear"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
               </div>
               <div class="send-message">
-                <button class="Btn">
+                <button type="submit" id="sendmessage" class="Btn">
                   Send
                   <iconify-icon
                     icon="material-symbols:send-rounded"
@@ -670,6 +698,7 @@
 
     <!-- js section -->
     <script src="/js/index.js"></script>
+    <script src="/js/message.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>

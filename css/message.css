@@ -1,0 +1,17 @@
+.statistics h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 20px;
+  text-align: center;
+  color: #052041;
+}
+.chat-logo {
+  width: 50%;
+  height: 50%;
+}
+.chat-logo img {
+  width: 100%;
+  height: 100%;
+}
