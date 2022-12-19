@@ -11,7 +11,7 @@
     <header>
       <div class="nav-bar">
         <a href="/index.html"
-          ><div class="log">
+          ><div id="code" class="log">
             <iconify-icon
               icon="material-symbols:code-blocks"
               style="color: #1a559b"
@@ -19,6 +19,15 @@
               height="50"
             ></iconify-icon></div
         ></a>
+        <div id="Humberger" class="log hidden">
+          <iconify-icon
+            inline
+            icon="mdi:microsoft-xbox-controller-menu"
+            style="color: #1a559b"
+            width="50"
+            height="50"
+          ></iconify-icon>
+        </div>
         <div class="user-profile">
           <div class="message">
             <iconify-icon
@@ -121,17 +130,18 @@
           <div class="list-of-message">
             <div class="message-title">
               <span class="title"><h3>New Messages</h3></span>
-              <span class="view-more"
-                ><h4>view more</h4>
-                <span class="stati-descr">
-                  <iconify-icon
-                    inline
-                    icon="material-symbols:arrow-right-rounded"
-                    style="color: #585454"
-                    width="20"
-                  ></iconify-icon>
-                </span>
-              </span>
+              <a href="/admin-page/Message.html"
+                ><span class="view-more"
+                  ><h4>view more</h4>
+                  <span class="stati-descr">
+                    <iconify-icon
+                      inline
+                      icon="material-symbols:arrow-right-rounded"
+                      style="color: #585454"
+                      width="20"
+                    ></iconify-icon>
+                  </span> </span
+              ></a>
             </div>
             <div class="list-of-all-messages">
               <ul>
