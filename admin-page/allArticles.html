@@ -7,8 +7,9 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link rel="stylesheet" href="/css/message.css" />
+    <link rel="stylesheet" href="/css/allarticle.css" />
   </head>
-  <body onload="test()">
+  <body>
     <header>
       <div class="nav-bar">
         <a href="/index.html"
@@ -75,10 +76,8 @@
         <div class="menu">
           <ul>
             <a href="/admin-page/dashboard.html"><li>Dashboard</li></a>
-            <a href="#"><li class="active">Message</li></a>
-            <a href="/admin-page/allArticles.html"
-              ><li>View list of all article</li></a
-            >
+            <a href="/admin-page/Message.html"><li>Message</li></a>
+            <a href="#"><li class="active">View list of all article</li></a>
             <a href="/admin-page/createNewArticle.html">
               <li>Create new article</li></a
             >
@@ -90,12 +89,12 @@
       </aside>
       <main>
         <section class="statistics">
-          <h1>Message from Clients</h1>
+          <h1>LIST OF ALL ARTICLES</h1>
         </section>
         <section class="user-request">
-          <div class="list-of-message">
+          <div class="list-of-message row">
             <div id="List of message" class="message-title">
-              <span class="title"><h3>New Messages</h3></span>
+              <span class="title"><h3>ALL ARTICLES</h3></span>
               <span class="view-more"
                 ><h4>Sort by</h4>
                 <span class="stati-descr">
@@ -110,88 +109,71 @@
             </div>
             <div class="list-of-all-messages">
               <ul>
-                <li>
-                  <div class="userProfile">
+                <li class="row">
+                  <div class="blogImage">
                     <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
+                      icon="material-symbols:image-outline"
+                      style="color: #052041"
                       width="50"
                     ></iconify-icon>
                   </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">5min ago</div>
+                  <div class="user-message username">
+                    <h3>
+                      Andela Lead the future Technical Leadership Program (ATLP)
+                      2022
+                    </h3>
+                  </div>
+                  <div class="commentLike">
+                    <span class="comments-time">5min ago</span>
+                    <div class="like-and-comment">
+                      <span
+                        ><h4>60</h4>
+                        <iconify-icon
+                          icon="fluent:thumb-like-24-filled"
+                          style="color: #052041"
+                          width="25"
+                        ></iconify-icon
+                      ></span>
+                      <span
+                        ><h4>6</h4>
+                        <iconify-icon
+                          icon="uis:comment-dots"
+                          style="color: #052041"
+                          width="25"
+                        ></iconify-icon
+                      ></span>
                     </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
                   </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">1hr ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">1min ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="userProfile">
-                    <iconify-icon
-                      inline
-                      icon="mdi:user-circle"
-                      style="color: #36383b"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message">
-                    <div class="username">
-                      <h3>Uwiduhaye Janne</h3>
-                      <div class="comments-time">17min ago</div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing ept.
-                    </p>
+                  <div class="button">
+                    <span class="update">
+                      <button>
+                        <iconify-icon
+                          inline
+                          icon="material-symbols:update"
+                          style="color: #052041"
+                          width="35"
+                        ></iconify-icon>
+                      </button>
+                    </span>
+
+                    <span class="delete">
+                      <button>
+                        <iconify-icon
+                          inline
+                          icon="material-symbols:delete-forever-outline-rounded"
+                          style="color: red"
+                          width="35"
+                        ></iconify-icon>
+                      </button>
+                    </span>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="chat-logo">
+          <!-- <div class="chat-logo">
             <img src="/Images/undraw_Chatting_re_j55r.png" alt="" />
-          </div>
+          </div> -->
         </section>
       </main>
     </section>

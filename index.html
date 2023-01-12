@@ -7,6 +7,7 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/myStyle.css" />
     <link rel="stylesheet" href="/components/mobilenavbar.css" />
+    <link rel="stylesheet" href="/css/validation.css" />
   </head>
   <body>
     <header>
@@ -589,22 +590,22 @@
           <form id="contactForm" action="">
             <div class="messenger-names">
               <div class="fname">
-                <label for="First Name">First Name</label>
+                <label for="First Name">Full Name</label>
                 <input
                   class="clear"
                   type="text"
-                  name=""
-                  id="fname"
+                  name="firstname"
+                  id="firstname"
                   placeholder="First name"
                   required
                 />
               </div>
               <div class="lname">
-                <label for="Second Name">Second Name</label>
+                <label for="Second Name">Email or Phone Number</label>
                 <input
                   class="clear"
                   type="text"
-                  name=""
+                  name="Second Name"
                   id="sname"
                   placeholder="Second name"
                   required
@@ -616,7 +617,7 @@
                 <label for="Subject">Subject</label>
                 <input
                   type="text"
-                  name=""
+                  name=" Subject"
                   id="subject"
                   class="clear"
                   required
@@ -625,7 +626,7 @@
               <div class="lname">
                 <label for="Message"> Message</label>
                 <textarea
-                  name=""
+                  name="Message"
                   id="message"
                   class="clear"
                   cols="30"
@@ -634,6 +635,7 @@
                 ></textarea>
               </div>
               <div class="send-message">
+                <!--   onclick="sendMessage()" -->
                 <button type="submit" id="sendmessage" class="Btn">
                   Send
                   <iconify-icon
