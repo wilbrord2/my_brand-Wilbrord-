@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilbrord</title>
-
     <link rel="stylesheet" href="/login.css" />
     <link rel="stylesheet" href="/myStyle.css" />
     <link rel="stylesheet" href="/components/mobilenavbar.css" />
@@ -108,8 +107,26 @@
           <h2>Login</h2>
           <div class="form">
             <form action="">
-              <input type="email" name="" id="" placeholder="Email" />
-              <input type="password" name="" id="" placeholder="Password" />
+              <div class="inputField">
+                <input
+                  type="email"
+                  name=""
+                  id="useremail"
+                  placeholder="Email"
+                  onkeyup="validateEmail()"
+                />
+              </div>
+              <span id="email-error"></span>
+              <div class="inputField">
+                <input
+                  type="password"
+                  name=""
+                  id="userpassword"
+                  placeholder="Password"
+                  onkeyup="validatePassword()"
+                />
+              </div>
+              <span id="password-error"></span>
             </form>
           </div>
           <a href="#">
@@ -117,9 +134,11 @@
           </a>
 
           <div class="lgbtn">
-            <a href="/admin-page/dashboard.html">
-              <button class="btn">login</button></a
-            >
+            <!-- <a href="/admin-page/dashboard.html"> 
+            onclick="return ValidateForm()"  
+            -->
+            <button id="login" class="btn">login</button>
+            <!-- </a> -->
           </div>
           <span class="signinwithgoogle">
             <img src="/Images/google sign up.png" alt="sign-up with google" />
@@ -135,6 +154,7 @@
         <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
       </div>
     </footer>
+
     <script src="/js/index.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>

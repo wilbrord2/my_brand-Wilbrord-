@@ -619,6 +619,10 @@ li span {
   flex-direction: column;
   margin: 10px 10px 0px 10px;
 }
+.error {
+  border: 3px solid red;
+  color: red;
+}
 .contact-message {
   width: 50%;
 }
