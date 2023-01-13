@@ -77,62 +77,6 @@ LoginBtn.addEventListener("click", function (e) {
     emailError.innerHTML = "Incorrect email";
     passwordError.innerHTML = "Incorrect password";
   }
+  document.getElementById("useremail").value = "";
+  document.getElementById("userpassword").value = "";
 });
-
-//validation of sign-up
-
-function ValidateName() {
-  const nameError = document.getElementById("name-error");
-  let fullname = document.getElementById("userName").value;
-
-  if (fullname.length == 0) {
-    nameError.innerHTML = "fill in your name";
-    return false;
-  }
-  if (!fullname.match(/^[A-Za-z]*\s{1}[A-za-z]*$/)) {
-    nameError.innerHTML = "write full name";
-    return false;
-  }
-  nameError.innerHTML = "";
-  return true;
-}
-
-function ValidatePassword() {
-  const passError = document.getElementById("password-error");
-  let passa = document.getElementById("fPassword").value;
-
-  if (passa.length == 0) {
-    passError.innerHTML = "fill in password";
-    return false;
-  }
-
-  if (passa.length < 6) {
-    passError.innerHTML = "Too short enter between 6-25";
-    return false;
-  }
-  if (passa.length > 25) {
-    passError.innerHTML = "Too high";
-    return false;
-  }
-  passError.innerHTML = "";
-
-  return true;
-}
-
-function submit() {
-  const repassError = document.getElementById("repassword-error");
-  let passa = document.getElementById("fPassword").value;
-  let passb = document.getElementById("lPassword").value;
-
-  if (!ValidateName() || !ValidatePassword() || !validateEmail()) {
-    return false;
-  }
-  if (passb.length == 0) {
-    repassError.innerHTML = "Repeate password";
-  }
-  if (passa === passb) {
-    window.location.href = "login.html";
-  } else {
-    repassError.innerHTML = "Repeate password";
-  }
-}

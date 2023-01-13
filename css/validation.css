@@ -2,9 +2,9 @@
   border: 3px solid rgb(3, 145, 57);
 } */
 .error {
-  border: 3px solid red;
+  border: 3px solid red !important;
   color: red;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .error::-webkit-input-placeholder {

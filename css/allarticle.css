@@ -13,6 +13,13 @@
   padding: 0;
   margin: 0px auto;
 }
+.blogImage {
+  width: 100px;
+}
+.blogImage img {
+  width: 100%;
+  height: 100%;
+}
 .button button {
   cursor: pointer;
   border: none;

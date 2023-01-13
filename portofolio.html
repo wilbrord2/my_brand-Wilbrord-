@@ -320,28 +320,56 @@
           </div>
         </div>
         <div class="contact-message">
-          <form action="">
+          <form id="contactForm" action="">
             <div class="messenger-names">
               <div class="fname">
-                <label for="First Name">First Name</label>
-                <input type="text" name="" id="" placeholder="First name" />
+                <label for="First Name">Full Name</label>
+                <input
+                  class="clear"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First name"
+                  required
+                />
               </div>
               <div class="lname">
-                <label for="Second Name">Second Name</label>
-                <input type="text" name="" id="" placeholder="Second name" />
+                <label for="Second Name">Email or Phone Number</label>
+                <input
+                  class="clear"
+                  type="text"
+                  name="Second Name"
+                  id="sname"
+                  placeholder="Email or phone"
+                  required
+                />
               </div>
             </div>
             <div class="messenger-message">
               <div class="fname messenger-subject">
                 <label for="Subject">Subject</label>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=" Subject"
+                  id="subject"
+                  class="clear"
+                  required
+                />
               </div>
               <div class="lname">
                 <label for="Message"> Message</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea
+                  name="Message"
+                  id="message"
+                  class="clear"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
               </div>
               <div class="send-message">
-                <button class="Btn">
+                <!--   onclick="sendMessage()" -->
+                <button type="submit" id="sendmessage" class="Btn">
                   Send
                   <iconify-icon
                     icon="material-symbols:send-rounded"
@@ -403,6 +431,7 @@
       </div>
     </footer>
     <script src="/js/index.js"></script>
+    <script src="/js/message.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>

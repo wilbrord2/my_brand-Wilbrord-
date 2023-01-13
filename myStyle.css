@@ -509,7 +509,7 @@ li span {
 .card-border {
   background: #ffffff;
   box-shadow: 6px 9px 6px rgba(171, 178, 186, 0.23);
-  border-radius: 0px 0px 40px 0px;
+  border-radius: 0px 0px 0px 0px;
   border-bottom: 5px solid rgba(31, 113, 210, 1);
 }
 
