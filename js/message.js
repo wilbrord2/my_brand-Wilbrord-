@@ -7,6 +7,7 @@ const message = document.getElementById("message");
 const getMessage = document.getElementById("sendmessage");
 const listMessage = document.getElementById("List of message");
 let Message = new Object();
+let MessageArr = [];
 
 getMessage.addEventListener("click", function (e) {
   e.preventDefault();
@@ -54,9 +55,8 @@ getMessage.addEventListener("click", function (e) {
       subject: subject.value,
       message: message.value,
     };
-
-    console.log("My contact Message", Message);
-    window.localStorage.setItem(`${Sname}`, JSON.stringify(Message));
+    MessageArr.push(Message);
+    window.localStorage.setItem(`Message`, JSON.stringify(MessageArr));
 
     fname.value = "";
     sname.value = "";
@@ -64,22 +64,3 @@ getMessage.addEventListener("click", function (e) {
     message.value = "";
   }
 });
-
-// listing element from local storage
-function test() {
-  const userMessage = JSON.parse(localStorage.getItem("0780505303"));
-  console.log(userMessage);
-  console.log(userMessage.fname);
-  for (const key in localStorage) {
-    console.log(`${key}:`);
-  }
-}
-//${localStorage.getItem(key)}
-// listMessage.addEventListener("DOMContentLoaded", function () {
-//   console.log("visible");
-//   console.log(localStorage.getItem("0780505303"));
-// });
-
-// listMessage.onload = function () {
-//   console.log(localStorage.getItem("0780505303"));
-// };

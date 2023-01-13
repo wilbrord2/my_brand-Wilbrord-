@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link rel="stylesheet" href="/css/message.css" />
     <link rel="stylesheet" href="/css/createnewarticle.css" />
+    <link rel="stylesheet" href="/css/validation.css" />
   </head>
   <body>
     <header>
@@ -96,44 +97,50 @@
             <div class="input-form">
               <div class="input-group col">
                 <label for="Full name">Full name</label>
-                <input type="text" name="" id="" />
+                <input type="text" name="" id="Bfname" />
               </div>
 
               <div class="input-group col">
                 <label for="Email">Email</label>
-                <input type="text" name="" id="" />
+                <input type="email" name="" id="Bemail" />
               </div>
             </div>
             <div class="input-form">
               <div class="input-group col">
                 <label for="">Source</label>
-                <input type="text" name="" id="" />
+                <input type="text" name="" id="Bsource" />
               </div>
 
               <div class="input-group col">
                 <label for="">Date</label>
-                <input type="text" name="" id="" />
+                <input type="date" name="" id="Bdate" />
               </div>
             </div>
             <div class="input-form">
               <div class="input-group row">
                 <label for="">Article title</label>
-                <input type="text" name="" id="" />
+                <input type="text" name="" id="Btitle" />
               </div>
             </div>
-            <div class="input-form">
+            <div id="uploadImage" class="input-form">
               <div class="input-group row">
                 <label for="">Article Image</label>
-                <input type="text" name="" id="" />
+
+                <input type="file" name="" id="Bimage" />
               </div>
             </div>
             <div class="input-form">
               <div class="input-group row">
                 <label for="">Article Description</label>
-                <textarea name="" id="" cols="20" rows="10"></textarea>
+                <textarea
+                  name=""
+                  id="Bdescription"
+                  cols="20"
+                  rows="10"
+                ></textarea>
               </div>
             </div>
-            <button class="row">Upload</button>
+            <button id="Bupload" class="row">Upload</button>
           </form>
         </section>
       </main>
@@ -144,7 +151,7 @@
         <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
       </div>
     </footer> -->
-    <script src="/js/message.js"></script>
+    <script src="/js/createnewblog.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>

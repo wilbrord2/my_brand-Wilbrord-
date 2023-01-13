@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/message.css" />
     <link rel="stylesheet" href="/css/allarticle.css" />
   </head>
-  <body>
+  <body onload="Articles()">
     <header>
       <div class="nav-bar">
         <a href="/index.html"
@@ -108,72 +108,9 @@
               </span>
             </div>
             <div class="list-of-all-messages">
-              <ul>
-                <li class="row">
-                  <div class="blogImage">
-                    <iconify-icon
-                      icon="material-symbols:image-outline"
-                      style="color: #052041"
-                      width="50"
-                    ></iconify-icon>
-                  </div>
-                  <div class="user-message username">
-                    <h3>
-                      Andela Lead the future Technical Leadership Program (ATLP)
-                      2022
-                    </h3>
-                  </div>
-                  <div class="commentLike">
-                    <span class="comments-time">5min ago</span>
-                    <div class="like-and-comment">
-                      <span
-                        ><h4>60</h4>
-                        <iconify-icon
-                          icon="fluent:thumb-like-24-filled"
-                          style="color: #052041"
-                          width="25"
-                        ></iconify-icon
-                      ></span>
-                      <span
-                        ><h4>6</h4>
-                        <iconify-icon
-                          icon="uis:comment-dots"
-                          style="color: #052041"
-                          width="25"
-                        ></iconify-icon
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="button">
-                    <span class="update">
-                      <button>
-                        <iconify-icon
-                          inline
-                          icon="material-symbols:update"
-                          style="color: #052041"
-                          width="35"
-                        ></iconify-icon>
-                      </button>
-                    </span>
-
-                    <span class="delete">
-                      <button>
-                        <iconify-icon
-                          inline
-                          icon="material-symbols:delete-forever-outline-rounded"
-                          style="color: red"
-                          width="35"
-                        ></iconify-icon>
-                      </button>
-                    </span>
-                  </div>
-                </li>
-              </ul>
+              <ul id="Blog-list"></ul>
             </div>
           </div>
-          <!-- <div class="chat-logo">
-            <img src="/Images/undraw_Chatting_re_j55r.png" alt="" />
-          </div> -->
         </section>
       </main>
     </section>
@@ -183,7 +120,7 @@
         <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
       </div>
     </footer> -->
-    <script src="/js/message.js"></script>
+    <script src="/js/renderingblog.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>
