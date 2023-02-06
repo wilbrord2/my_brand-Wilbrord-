@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wilbrord</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/message.css" />
+  </head>
+  <body onload="ListOfClients()">
+    <header>
+      <div class="nav-bar">
+        <a href="/index.html"
+          ><div id="code" class="log">
+            <iconify-icon
+              icon="material-symbols:code-blocks"
+              style="color: #1a559b"
+              width="50"
+              height="50"
+            ></iconify-icon></div
+        ></a>
+        <div id="Humberger" class="log hidden">
+          <iconify-icon
+            inline
+            icon="mdi:microsoft-xbox-controller-menu"
+            style="color: #1a559b"
+            width="50"
+            height="50"
+          ></iconify-icon>
+        </div>
+        <div class="user-profile">
+          <div class="message">
+            <iconify-icon
+              icon="ic:baseline-email"
+              style="color: #1a559b"
+              width="20"
+              height="20"
+            ></iconify-icon>
+          </div>
+          <div class="notification">
+            <iconify-icon
+              icon="ri:notification-2-fill"
+              style="color: #1a559b"
+              width="20"
+              height="20"
+            ></iconify-icon>
+          </div>
+          <div class="user-name"><h5>Wilbrord Ibyimana</h5></div>
+          <div class="user-image">
+            <img src="/Images/test1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="main">
+      <aside>
+        <div class="aside-title">
+          <div class="user-image">
+            <img src="/Images/test1.png" alt="" />
+          </div>
+          <div class="admin-name">
+            <h3>Wilbrord ibyimana</h3>
+            <h4>bwilbrord@gmail.com</h4>
+          </div>
+          <div class="closeBtn">
+            <iconify-icon
+              icon="mdi:close-circle-outline"
+              style="color: white"
+              width="20"
+              height="20"
+            ></iconify-icon>
+          </div>
+        </div>
+        <div class="menu">
+          <ul>
+            <a href="/admin-page/dashboard.html"><li>Dashboard</li></a>
+            <a href="/admin-page/Message.html"><li>Message</li></a>
+            <a href="/admin-page/allArticles.html"
+              ><li>View list of all article</li></a
+            >
+            <a href="/admin-page/createNewArticle.html">
+              <li>Create new article</li></a
+            >
+            <a href="#"> <li class="active">List of clients</li></a>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <section class="statistics">
+          <h1>List of clients</h1>
+        </section>
+        <section class="user-request">
+          <div class="list-of-message">
+            <div id="List of message" class="message-title">
+              <span class="title"><h3>ALL CLIENTS</h3></span>
+              <span class="view-more"
+                ><h4>Sort by</h4>
+                <span class="stati-descr">
+                  <iconify-icon
+                    inline
+                    icon="material-symbols:arrow-drop-down-rounded"
+                    style="color: #585454"
+                    width="20"
+                  ></iconify-icon>
+                </span>
+              </span>
+            </div>
+            <div class="list-of-all-messages">
+              <ul id="list-of-clients"></ul>
+            </div>
+          </div>
+          <div class="chat-logo">
+            <img src="/Images/undraw_Chatting_re_j55r.png" alt="" />
+          </div>
+        </section>
+      </main>
+    </section>
+    <!-- 
+    <footer>
+      <div class="footer">
+        <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
+      </div>
+    </footer> -->
+    <script src="/js/clients.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+  </body>
+</html>

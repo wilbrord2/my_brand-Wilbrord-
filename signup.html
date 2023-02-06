@@ -7,6 +7,7 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/login.css" />
     <link rel="stylesheet" href="/myStyle.css" />
+    <link rel="stylesheet" href="css/validation.css" />
     <link rel="stylesheet" href="/components/mobilenavbar.css" />
   </head>
   <body>
@@ -105,14 +106,37 @@
           <h2>Sign Up</h2>
           <div class="form">
             <form action="">
-              <input type="email" name="" id="" placeholder="Email" />
-              <input type="password" name="" id="" placeholder="Password" />
+              <input
+                type="text"
+                name=""
+                id="userName"
+                placeholder="Full Name"
+                onkeyup="ValidateName()"
+              />
+              <span id="name-error"></span>
+              <input
+                type="email"
+                name=""
+                id="useremail"
+                placeholder="Email"
+                onkeyup="validateEmail()"
+              />
+              <span id="email-error"></span>
               <input
                 type="password"
                 name=""
-                id=""
+                id="fPassword"
+                placeholder="Password"
+                onkeyup="ValidatePassword()"
+              />
+              <span id="password-error"></span>
+              <input
+                type="password"
+                name=""
+                id="lPassword"
                 placeholder="Re-enter Password"
               />
+              <span id="repassword-error"></span>
             </form>
           </div>
           <a href="#">
@@ -120,7 +144,8 @@
           </a>
 
           <div class="lgbtn">
-            <button class="btn">Register</button>
+            <!-- onclick="submit()" -->
+            <button id="Register" class="btn">Register</button>
           </div>
           <span class="signinwithgoogle sgsup">
             <img src="/Images/google sign up.png" alt="sign-up with google" />
@@ -131,12 +156,13 @@
         <img src="/Images/sign up.png" alt="" />
       </div>
     </section>
-    <footer>
+    <!-- <footer>
       <div class="copyright">
         <h3>Copyright &copy; 2022 wilbrord All rights reserved.</h3>
       </div>
-    </footer>
-    <script src="/js/index.js"></script>
+    </footer> -->
+
+    <script src="/js/signup.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>

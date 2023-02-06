@@ -67,12 +67,21 @@ form {
 .form input {
   border-radius: 30px;
   border: none;
-  margin: 0px 20px;
+  margin-left: 20px;
   padding: 10px;
+  width: 90%;
+}
+form span {
+  color: red;
+  font-family: monospace;
+  margin-left: 20px;
 }
 .form input:focus {
   border: none;
   outline: 2px solid #29bec9;
+}
+.textfieldResponse {
+  position: absolute;
 }
 .form-group h3 {
   font-family: arial, sans-serif;
@@ -116,7 +125,11 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 @media screen and (max-width: 800px) {
+  #login-page {
+    margin-top: 70px;
+  }
   .loginImg {
     display: none;
   }

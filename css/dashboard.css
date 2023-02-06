@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+/* header */
+.nav-bar {
+  border-bottom: 3px solid #1a559b;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+.log {
+  margin-left: 50px;
+}
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 50px;
+  width: 30%;
+}
+.message {
+  border-left: 1px solid grey;
+  padding: 0px 10px;
+  border-right: 1px solid grey;
+}
+.notification {
+  border-left: 1px solid grey;
+  padding: 0px 10px;
+  border-right: 1px solid grey;
+}
+.user-name {
+  padding: 0px 10px;
+  text-align: end;
+}
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 1px solid #1a559b;
+}
+.user-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(1.2);
+}
+/* end of header */
+/* start of main */
+.main {
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 60px;
+  height: 98vh;
+}
+/* start of aside */
+aside {
+  width: 25%;
+  height: 100%;
+  background-color: #052041;
+}
+.aside-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
+}
+.admin-name {
+  margin-top: 17px;
+}
+.admin-name h4 {
+  font-family: arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}
+.admin-name h3 {
+  font-family: arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 20px;
+}
+.menu ul {
+  margin-top: 20px;
+}
+.menu li {
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  border-bottom: 1px solid grey;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 8px;
+}
+.active {
+  border-left: 4px solid rgb(211, 43, 1) !important;
+}
+.menu li:hover {
+  border-left: 4px solid rgb(1, 211, 200);
+  background-color: rgb(7, 88, 88);
+}
+
+/* end of aside */
+
+/* main section start */
+main {
+  width: 100%;
+}
+.statistics {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 3rem;
+}
+
+.stati {
+  width: 25%;
+  padding: 1.5rem;
+  border: 2px solid rgba(128, 128, 128, 0.16);
+  height: 30%;
+}
+.stati-descr {
+  float: right;
+}
+.stati-number h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 20px;
+  text-align: center;
+  color: #081e39;
+}
+.stati-description {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #081e39;
+  text-align: center;
+  margin-top: 1rem;
+}
+.user-request {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.list-of-message,
+.list-of-comments {
+  width: 40%;
+  border: 2px solid rgba(128, 128, 128, 0.16);
+}
+.message-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d2c9c9;
+}
+.title {
+  width: 50%;
+}
+.title h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #052041;
+}
+.view-more {
+  cursor: pointer;
+}
+.view-more:hover {
+  text-decoration: underline;
+}
+.view-more h4 {
+  display: inline;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+  color: #353131;
+}
+.list-of-all-messages li,
+.list-of-all-comments li {
+  padding: 5px;
+  border-bottom: 1px solid #80808021;
+  display: flex;
+  align-items: center;
+}
+.userProfile {
+  padding: 5px;
+}
+.user-message {
+  width: 90%;
+}
+.user-message p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}
+.username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.username h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  /* text-align: center; */
+  color: #000000;
+}
+.comments-time {
+  color: #999;
+  font-size: 11px;
+  padding: 6px;
+}
+.hidden {
+  display: none;
+}
+/* main section end */
+/* end of main */
+footer {
+  background-color: #052041;
+  padding: 1.5rem 3rem;
+}
+.footer h3 {
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 100;
+}
+@media only screen and (max-width: 920px) {
+  .main {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+  aside {
+    width: 30%;
+    height: auto;
+  }
+  .user-request {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .list-of-message,
+  .list-of-comments {
+    margin: 0px auto;
+    width: 80%;
+    border: 2px solid rgba(128, 128, 128, 0.16);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    height: 100%;
+  }
+  #Humberger {
+    display: block;
+    position: absolute;
+    left: 0;
+  }
+  #code {
+    display: none;
+  }
+  aside {
+    display: none;
+  }
+  .user-profile {
+    margin-right: 20px;
+    width: 40%;
+  }
+  .statistics {
+    flex-wrap: wrap;
+  }
+  .user-request {
+    flex-direction: row;
+  }
+  .stati {
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .user-profile {
+    margin-right: 10px;
+    width: 50%;
+  }
+  .log {
+    margin-left: 5%;
+  }
+
+  .statistics {
+    justify-content: center;
+  }
+  .user-request {
+    flex-wrap: wrap;
+  }
+  .list-of-message,
+  .list-of-comments {
+    width: 90%;
+    border: 2px solid rgba(128, 128, 128, 0.16);
+  }
+}
+@media only screen and (max-width: 630px) {
+  .user-profile {
+    margin-right: 10px;
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .user-name {
+    display: none;
+  }
+  .main {
+    height: 100%;
+    margin-bottom: 47px;
+  }
+}

@@ -126,10 +126,10 @@ iconify-icon {
   transition: 0.3s linear;
   border: 2px solid #165299;
 }
-iconify-icon:hover {
+/* iconify-icon:hover {
   transition: all 0.5s ease-in-out;
   transform: rotate(359deg);
-}
+} */
 
 /* main css */
 
@@ -425,6 +425,11 @@ li span {
   border-radius: 10px 10px 30px 30px;
   filter: drop-shadow(10px 20px 50px #d5d7dd);
 }
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 20px 11px rgb(0 0 0 / 12%);
+  transition: all 0.3s;
+}
 .card-logo img {
   width: -webkit-fill-available;
   height: fit-content;
@@ -504,7 +509,7 @@ li span {
 .card-border {
   background: #ffffff;
   box-shadow: 6px 9px 6px rgba(171, 178, 186, 0.23);
-  border-radius: 0px 0px 40px 0px;
+  border-radius: 0px 0px 0px 0px;
   border-bottom: 5px solid rgba(31, 113, 210, 1);
 }
 
@@ -543,17 +548,27 @@ li span {
   margin-right: 4px;
   border: 1px solid;
 }
-
+.date {
+  font-size: 10px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
 /* ***************Contact css********** */
-#Contact-page {
+.Contact-page {
   background-image: url(./Images/contactUsImage.png);
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(109px);
+  /* backdrop-filter: blur(109px); */
 }
 
-#Contact-page h1 {
+.Contact-page h1 {
   color: #fff;
+  margin-top: 2rem;
 }
 .container-Contact {
   display: flex;
@@ -603,6 +618,10 @@ li span {
   display: flex;
   flex-direction: column;
   margin: 10px 10px 0px 10px;
+}
+.error {
+  border: 3px solid red;
+  color: red;
 }
 .contact-message {
   width: 50%;
@@ -790,7 +809,7 @@ footer {
   }
   section {
     padding: 10px 5px;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .section-title {
     font-size: 20px;
@@ -831,13 +850,19 @@ footer {
     width: 100%;
     height: 100%;
   }
-  /* .btn-exp {
-    left: 30%;
-  } */
+  .send-message {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 450px) {
   main {
     height: 100vh;
+  }
+  .container-portfolio {
+    margin: 50px 0px 25px 0px;
+  }
+  .card {
+    width: 95%;
   }
   .container-Contact {
     margin: 20px 10px;
@@ -851,6 +876,7 @@ footer {
   }
   .description {
     width: 90%;
+    margin: 0px auto;
     border-bottom: none;
   }
   .section-main {

@@ -7,6 +7,7 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/myStyle.css" />
     <link rel="stylesheet" href="/components/mobilenavbar.css" />
+    <link rel="stylesheet" href="/css/validation.css" />
   </head>
   <body>
     <header>
@@ -118,28 +119,30 @@
             experience
           </div>
         </div>
-        <button class="Btn btn-display">
-          Download cv
-          <iconify-icon
-            icon="material-symbols:download-rounded"
-            style="color: #1a559b"
-            width="24"
-            height="24"
-          ></iconify-icon>
-        </button>
-        <button class="Btn btn-display btn-m">
-          My project
-          <iconify-icon
-            icon="material-symbols:send-rounded"
-            style="color: #1a559b"
-            width="24"
-            height="24"
-          ></iconify-icon>
-        </button>
+        <a href="/Docs/Wilbrord.pdf" download>
+          <button class="Btn btn-display">
+            Download cv
+            <iconify-icon
+              icon="material-symbols:download-rounded"
+              style="color: #1a559b"
+              width="24"
+              height="24"
+            ></iconify-icon></button
+        ></a>
+        <a href="portofolio.html">
+          <button class="Btn btn-display btn-m">
+            My project
+            <iconify-icon
+              icon="material-symbols:send-rounded"
+              style="color: #1a559b"
+              width="24"
+              height="24"
+            ></iconify-icon></button
+        ></a>
       </div>
     </main>
-
-    <section id="AboutPage">
+    <div id="AboutPage"></div>
+    <section>
       <div class="section-title">
         <h1>About Me</h1>
       </div>
@@ -160,22 +163,23 @@
             <ul>
               <li><span>First Name:</span> Wilbrord</li>
               <li><span>Last Name: </span>Ibyimana</li>
-              <li><span>Age: </span>22 Years</li>
+              <li><span>Birth-Day: </span>30/7/2000</li>
               <li><span>Hobby: </span>Playing guitar</li>
               <li><span>Nationality: </span>Rwandan</li>
               <li><span>Languages:</span> English, Kinyarwanda</li>
               <li><span>Address: </span>Nyarugenge, Kigali, Rwanda</li>
             </ul>
           </div>
-          <button class="Btn cvBtn btn-display">
-            Download cv
-            <iconify-icon
-              icon="material-symbols:download-rounded"
-              style="color: #1a559b"
-              width="24"
-              height="24"
-            ></iconify-icon>
-          </button>
+          <a href="/Docs/Wilbrord.pdf" download>
+            <button class="Btn cvBtn btn-display">
+              Download cv
+              <iconify-icon
+                icon="material-symbols:download-rounded"
+                style="color: #1a559b"
+                width="24"
+                height="24"
+              ></iconify-icon></button
+          ></a>
         </div>
       </div>
       <div class="section-end About-section-end">
@@ -211,8 +215,8 @@
         </ul>
       </div>
     </section>
-
-    <section id="Skills-page">
+    <div id="Skills-page"></div>
+    <section>
       <div class="section-title">
         <h1>Skills</h1>
       </div>
@@ -258,8 +262,8 @@
         </div>
       </div>
     </section>
-
-    <section id="Portfolio-page">
+    <div id="Portfolio-page"></div>
+    <section>
       <div class="section-title">
         <h1>My work</h1>
       </div>
@@ -289,7 +293,7 @@
             </p>
           </div>
           <div class="card-link">
-            <a href="#"
+            <a href="https://github.com/wilbrord2"
               >See project
               <iconify-icon
                 icon="material-symbols:arrow-right-alt-rounded"
@@ -314,7 +318,7 @@
             </p>
           </div>
           <div class="card-link">
-            <a href="#"
+            <a href="https://github.com/wilbrord2"
               >See project
               <iconify-icon
                 icon="material-symbols:arrow-right-alt-rounded"
@@ -343,7 +347,7 @@
             </p>
           </div>
           <div class="card-link">
-            <a href="#"
+            <a href="https://github.com/wilbrord2"
               >See project
               <iconify-icon
                 icon="material-symbols:arrow-right-alt-rounded"
@@ -361,8 +365,8 @@
         </a>
       </div>
     </section>
-
-    <section id="Blog-page">
+    <div id="Blog-page"></div>
+    <section>
       <div class="section-title">
         <h1>Blogs</h1>
       </div>
@@ -403,9 +407,10 @@
               Andela Lead the future Technical Leadership Program (ATLP) 2022
               -Rwandan - Youth Empowerment Opportunities
             </p>
+            <span class="date">11/12/2022 5:50 am</span>
           </div>
           <div class="card-comment">
-            <div class="commentContainer">
+            <!-- <div class="commentContainer">
               <input type="text" name="" id="" placeholder="Add a comment..." />
               <iconify-icon
                 class="hidden"
@@ -415,7 +420,7 @@
                 height="25"
               ></iconify-icon>
               <button class="Btn">Post</button>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="card card-border">
@@ -454,9 +459,10 @@
               Celebrated gospel group Hillsong London has landed in Kigali ahead
               of their performance scheduled tomorrow, November 25 at BK Arena.
             </p>
+            <span class="date">19/11/2022 9:20 am</span>
           </div>
           <div class="card-comment">
-            <div class="commentContainer">
+            <!-- <div class="commentContainer">
               <input type="text" name="" id="" placeholder="Add a comment..." />
               <iconify-icon
                 class="hidden"
@@ -466,7 +472,7 @@
                 height="25"
               ></iconify-icon>
               <button class="Btn">Post</button>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="card card-border">
@@ -506,9 +512,10 @@
               industry and so Eduonix brings before you the top 10 coding
               challenges that are quite essential
             </p>
+            <span class="date">21/12/2022 1:10 pm</span>
           </div>
           <div class="card-comment">
-            <div class="commentContainer">
+            <!-- <div class="commentContainer">
               <input type="text" name="" id="" placeholder="Add a comment..." />
               <iconify-icon
                 class="hidden"
@@ -518,7 +525,7 @@
                 height="25"
               ></iconify-icon>
               <button class="Btn">Post</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -535,7 +542,8 @@
         ></a>
       </div>
     </section>
-    <section id="Contact-page">
+    <div id="Contact-page"></div>
+    <section class="Contact-page">
       <div class="section-title"><h1>Contact ME</h1></div>
       <div class="nav-blog">
         <h2>Get in touch</h2>
@@ -579,28 +587,56 @@
           </div>
         </div>
         <div class="contact-message">
-          <form action="">
+          <form id="contactForm" action="">
             <div class="messenger-names">
               <div class="fname">
-                <label for="First Name">First Name</label>
-                <input type="text" name="" id="" placeholder="First name" />
+                <label for="First Name">Full Name</label>
+                <input
+                  class="clear"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First name"
+                  required
+                />
               </div>
               <div class="lname">
-                <label for="Second Name">Second Name</label>
-                <input type="text" name="" id="" placeholder="Second name" />
+                <label for="Second Name">Email or Phone Number</label>
+                <input
+                  class="clear"
+                  type="text"
+                  name="Second Name"
+                  id="sname"
+                  placeholder="Email or phone"
+                  required
+                />
               </div>
             </div>
             <div class="messenger-message">
               <div class="fname messenger-subject">
                 <label for="Subject">Subject</label>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=" Subject"
+                  id="subject"
+                  class="clear"
+                  required
+                />
               </div>
               <div class="lname">
                 <label for="Message"> Message</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea
+                  name="Message"
+                  id="message"
+                  class="clear"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
               </div>
               <div class="send-message">
-                <button class="Btn">
+                <!--   onclick="sendMessage()" -->
+                <button type="submit" id="sendmessage" class="Btn">
                   Send
                   <iconify-icon
                     icon="material-symbols:send-rounded"
@@ -664,6 +700,7 @@
 
     <!-- js section -->
     <script src="/js/index.js"></script>
+    <script src="/js/message.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>
