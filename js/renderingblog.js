@@ -1,17 +1,29 @@
 "use strict";
-
 // rendering Articles
 const blogul = document.getElementById("Blog-list");
 let Blogs;
 
-function Articles() {
-  Blogs = JSON.parse(localStorage.getItem("Blog"));
-  for (let i = 0; i < Blogs.length; i++) {
+// RENDERING DATA FROM DATABASE
+
+const url =
+  "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+
+fetch(url, {
+  method: "get",
+  header: {
+    "content-type": "application/json; charset=utf-8 ",
+  },
+})
+  .then((res) => res.json())
+  .then((data) => Articles(data))
+  .catch((error) => console.log(error));
+
+function Articles(blog) {
+  blog.forEach((article) => {
     blogul.appendChild(
-      createList(Blogs[i].Btitle, Blogs[i].Bimage, Blogs[i].Bdate, i)
+      createList(article.title, article.description, article.date)
     );
-  }
-  // console.log(Blogs[0].Bimage);
+  });
 }
 function createList(title, Image, date, index) {
   const li = document.createElement("li");
@@ -70,16 +82,16 @@ function createList(title, Image, date, index) {
 </div>`;
   return li;
 }
-function DeleteBlog(index) {
-  Blogs.splice(index, 1);
-  window.localStorage.setItem("Blog", JSON.stringify(Blogs));
-  window.location.href = "/admin-page/allArticles.html";
-  //console.log("Deleteed", index);
-}
+// function DeleteBlog(index) {
+//   Blogs.splice(index, 1);
+//   window.localStorage.setItem("Blog", JSON.stringify(Blogs));
+//   window.location.href = "/admin-page/allArticles.html";
+//   //console.log("Deleteed", index);
+// }
 
-function UpdateBlog(index) {
-  console.log("Updating", index);
+// function UpdateBlog(index) {
+//   console.log("Updating", index);
 
-  sessionStorage.setItem("updating", JSON.stringify(Blogs[index]));
-  window.location.href = "/admin-page/createNewArticle.html";
-}
+//   sessionStorage.setItem("updating", JSON.stringify(Blogs[index]));
+//   window.location.href = "/admin-page/createNewArticle.html";
+// }

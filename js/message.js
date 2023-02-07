@@ -7,7 +7,30 @@ const message = document.getElementById("message");
 const getMessage = document.getElementById("sendmessage");
 const listMessage = document.getElementById("List of message");
 let Message = new Object();
-let MessageArr = [];
+let statusResult = "make sure you fill the form correctly.";
+// let MessageArr = [];
+
+// CREATING A USER
+
+async function sendmessage(url, data) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  } catch (error) {
+    console.log("error generated", error);
+  }
+}
 
 getMessage.addEventListener("click", function (e) {
   e.preventDefault();
@@ -50,13 +73,19 @@ getMessage.addEventListener("click", function (e) {
     return true;
   } else {
     Message = {
-      fname: fname.value,
-      sname: sname.value,
+      name: fname.value,
+      email: sname.value,
       subject: subject.value,
       message: message.value,
     };
-    MessageArr.push(Message);
-    window.localStorage.setItem(`Message`, JSON.stringify(MessageArr));
+    sendmessage(
+      "https://wilbrord-mybrand-backend.up.railway.app/api/messages/save",
+      Message
+    )
+      .then((data) => registerResult(data))
+      .catch((err) => console.log(err.message));
+    // MessageArr.push(Message);
+    // window.localStorage.setItem(`Message`, JSON.stringify(MessageArr));
 
     fname.value = "";
     sname.value = "";
@@ -64,3 +93,42 @@ getMessage.addEventListener("click", function (e) {
     message.value = "";
   }
 });
+
+// MODEL
+
+// Get the modal
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName("close")[0];
+const okmodelbtn = document.getElementById("modelSignup");
+let registerResult;
+// When the user clicks the button, open the modal
+getMessage.onclick = function () {
+  modal.style.display = "block";
+  registerResult = async (data) => {
+    statusResult = await data;
+    console.log(statusResult);
+  };
+  if (statusResult !== "Thank you for your feedback" || statusResult !== "") {
+    document.getElementById("modelmessage").innerHTML = `${statusResult}`;
+    okmodelbtn.onclick = function () {
+      modal.style.display = "none";
+    };
+  } else {
+    document.getElementById("modelmessage").innerHTML = `${statusResult}`;
+    okmodelbtn.onclick = function () {
+      window.location.href = "login.html";
+    };
+  }
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

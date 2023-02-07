@@ -126,6 +126,8 @@ footer {
   width: 100%;
 }
 
+
+
 @media screen and (max-width: 800px) {
   #login-page {
     margin-top: 70px;

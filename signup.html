@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/myStyle.css" />
     <link rel="stylesheet" href="css/validation.css" />
     <link rel="stylesheet" href="/components/mobilenavbar.css" />
+    <link rel="stylesheet" href="/css/model.css" />
   </head>
   <body>
     <header>
@@ -144,12 +145,26 @@
           </a>
 
           <div class="lgbtn">
-            <!-- onclick="submit()" -->
             <button id="Register" class="btn">Register</button>
           </div>
-          <span class="signinwithgoogle sgsup">
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+
+              <div class="header">
+                <h2>Messages</h2>
+              </div>
+              <div class="modelmessage">
+                <p id="message"></p>
+              </div>
+              <div class="modelbutton">
+                <button id="modelSignup" class="btn modelBtn">ok</button>
+              </div>
+            </div>
+          </div>
+          <!-- <span class="signinwithgoogle sgsup">
             <img src="/Images/google sign up.png" alt="sign-up with google" />
-          </span>
+          </span> -->
         </div>
       </div>
       <div class="loginImg">

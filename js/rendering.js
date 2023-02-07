@@ -5,36 +5,52 @@ const blogul = document.getElementById("list-of-blogs");
 let Messages, Blogs, Clients;
 const date = Date();
 
-function test() {
-  Messages = JSON.parse(localStorage.getItem("Message"));
-  for (let i = 0; i < Messages.length; i++) {
-    messageul.appendChild(createList(Messages[i].fname, Messages[i].message));
-  }
-}
-function Dtest() {
-  //MESSAGE
-  Messages = JSON.parse(localStorage.getItem("Message"));
-  document.getElementById("countMessage").textContent = Messages.length;
+const myToken = JSON.parse(localStorage.getItem("myToken"));
 
-  for (let i = Messages.length - 1; i >= Messages.length - 4; i--) {
-    messageul.appendChild(createList(Messages[i].fname, Messages[i].message));
-  }
+// RENDERING DATA FROM DATABASE
 
-  //ARTICLES
-  Blogs = JSON.parse(localStorage.getItem("Blog"));
-  document.getElementById("countArticles").textContent = Blogs.length;
+// const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
+const url = "http://localhost:3000/api/messages/show";
+fetch(url, {
+  method: "GET",
+  headers: {
+    "content-type": "application/json; charset=utf-8 ",
+    Authorization: `Bearer ${myToken.token}`,
+    authtoken: `${myToken.token}`,
+  },
+})
+  .then((res) => res.json())
+  .then((data) => AllMessages(data))
+  .catch((error) => console.log(error));
 
-  for (let i = 0; i < Blogs.length; i++) {
-    blogul.appendChild(
-      createBlogList(Blogs[i].Btitle, Blogs[i].Bdescription, Blogs[i].Bdate)
+function AllMessages(mess) {
+  for (let i = 0; i < mess.length; i++) {
+    messageul.appendChild(
+      createList(mess[i].name, mess[i].Message, mess[i].date)
     );
   }
+  document.getElementById("countMessage").textContent = mess.length;
 
-  //CLIENTS
-  Clients = JSON.parse(localStorage.getItem("Clients"));
-  document.getElementById("countClients").textContent = Clients.length;
+  for (let i = mess.length - 1; i >= mess.length - 3; i--) {
+    messageul.appendChild(createList(mess[i].fname, mess[i].message));
+  }
 }
-function createList(name, message) {
+
+//ARTICLES
+// Blogs = JSON.parse(localStorage.getItem("Blog"));
+// document.getElementById("countArticles").textContent = Blogs.length;
+
+// for (let i = 0; i < Blogs.length; i++) {
+//   blogul.appendChild(
+//     createBlogList(Blogs[i].Btitle, Blogs[i].Bdescription, Blogs[i].Bdate)
+//   );
+// }
+
+//CLIENTS
+Clients = JSON.parse(localStorage.getItem("Clients"));
+document.getElementById("countClients").textContent = Clients.length;
+
+function createList(name, message, date) {
   const li = document.createElement("li");
   li.innerHTML = `<div class="userProfile">
   <iconify-icon
@@ -47,11 +63,11 @@ function createList(name, message) {
 <div class="user-message">
   <div class="username">
     <h3 id="Username">${name}</h3>
-    <div class="comments-time"></div>
   </div>
   <p id="message">
     ${message}
   </p>
+  <p>${date}</p>
 </div>`;
   return li;
 }
@@ -73,8 +89,4 @@ function createBlogList(name, message, date) {
  
 </div>`;
   return li;
-
-  //   <p>
-  //   ${message}
-  //  </p>
 }

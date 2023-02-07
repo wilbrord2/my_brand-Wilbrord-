@@ -8,7 +8,30 @@ let emailError = document.getElementById("email-error");
 const nameError = document.getElementById("name-error");
 const passError = document.getElementById("password-error");
 let signupObj = new Object();
-let signupArr = new Array();
+let statusResult = "make sure you fill the form correctly.";
+
+// CREATING A USER
+
+async function postData(url, data) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  } catch (error) {
+    console.log("error generated", error);
+  }
+}
+
 RegisterBtn.addEventListener("click", function (e) {
   let name = username.value;
   let userEmail = email.value;
@@ -55,18 +78,25 @@ RegisterBtn.addEventListener("click", function (e) {
     return false;
   } else if (passa === passb) {
     signupObj = {
-      name: username.value,
-      userEmail: email.value,
-      P1: password.value,
-      reP1: repassword.value,
+      name: `${username.value}`,
+      email: `${email.value}`,
+      password: `${password.value}`,
+      repassword: `${repassword.value}`,
     };
-    signupArr.push(signupObj);
-    window.localStorage.setItem("Clients", JSON.stringify(signupArr));
+    // signupArr.push(signupObj);
+    // window.localStorage.setItem("Clients", JSON.stringify(signupArr));
+    postData(
+      "https://wilbrord-mybrand-backend.up.railway.app/api/user/createUser",
+      signupObj
+    )
+      .then((data) => registerResult(data))
+      .catch((err) => console.log(err.message));
+
     document.getElementById("userName").value = "";
     document.getElementById("useremail").value = "";
     document.getElementById("fPassword").value = "";
     document.getElementById("lPassword").value = "";
-    window.location.href = "login.html";
+
     return true;
   }
 });
@@ -124,3 +154,49 @@ function validateEmail() {
   emailError.innerHTML = "";
   return true;
 }
+
+// MODEL
+
+// Get the modal
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("Register");
+const span = document.getElementsByClassName("close")[0];
+const okmodelbtn = document.getElementById("modelSignup");
+let registerResult
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+  registerResult= async (data) => {
+    statusResult = await data;
+  };
+  if (
+    statusResult !== "email Already exist try onother one" ||
+    statusResult !== ""
+  ) {
+    document.getElementById("message").innerHTML = `${statusResult}`;
+    console.log(statusResult);
+    okmodelbtn.onclick = function () {
+      modal.style.display = "none";
+    };
+  } else {
+    document.getElementById(
+      "message"
+    ).innerHTML = `${statusResult}`;
+    console.log(statusResult);
+    okmodelbtn.onclick = function () {
+      window.location.href = "login.html";
+    };
+  }
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
