@@ -1,33 +1,40 @@
 "use strict";
 // rendering Articles
 const blogul = document.getElementById("Blog-list");
-let Blogs;
 
 // RENDERING DATA FROM DATABASE
 
-const url =
-  "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+const Token = JSON.parse(localStorage.getItem("myToken"));
+const Authtoken = Token.token.data;
+const isLoggedin = Token.isLoggedin;
+if (!isLoggedin && !Authtoken) {
+  window.location.href = "login.html";
+} else {
+  // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+  const url = "http://localhost:3000/api/article/getAllArticle";
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json; charset=utf-8 ",
+      Authorization: `Bearer ${Authtoken}`,
+      authtoken: `${Authtoken}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => Articles(data))
+    .catch((error) => console.log(error));
 
-fetch(url, {
-  method: "get",
-  header: {
-    "content-type": "application/json; charset=utf-8 ",
-  },
-})
-  .then((res) => res.json())
-  .then((data) => Articles(data))
-  .catch((error) => console.log(error));
+  function Articles(blog) {
+    blog.forEach((article) => {
+      blogul.appendChild(
+        createList(article.title, article.description, article.date)
+      );
+    });
+  }
 
-function Articles(blog) {
-  blog.forEach((article) => {
-    blogul.appendChild(
-      createList(article.title, article.description, article.date)
-    );
-  });
-}
-function createList(title, Image, date, index) {
-  const li = document.createElement("li");
-  li.innerHTML = `<div class="blogImage">
+  function createList(title, Image, date, index) {
+    const li = document.createElement("li");
+    li.innerHTML = `<div class="blogImage">
   <img src="${Image}" alt="blog image"/>
 </div>
 <div class="user-message username">
@@ -80,18 +87,6 @@ function createList(title, Image, date, index) {
     </button>
   </span>
 </div>`;
-  return li;
+    return li;
+  }
 }
-// function DeleteBlog(index) {
-//   Blogs.splice(index, 1);
-//   window.localStorage.setItem("Blog", JSON.stringify(Blogs));
-//   window.location.href = "/admin-page/allArticles.html";
-//   //console.log("Deleteed", index);
-// }
-
-// function UpdateBlog(index) {
-//   console.log("Updating", index);
-
-//   sessionStorage.setItem("updating", JSON.stringify(Blogs[index]));
-//   window.location.href = "/admin-page/createNewArticle.html";
-// }

@@ -110,6 +110,7 @@ LoginBtn.addEventListener("click", function (e) {
     } else {
       const myToken = {
         token: token,
+        isLoggedin: true,
       };
       console.log(myToken);
       userToken.push(token);

@@ -556,6 +556,7 @@ li span {
   margin-bottom: 10px;
   display: flex;
   align-items: baseline;
+  margin-right: 5%;
   justify-content: flex-end;
 }
 /* ***************Contact css********** */
