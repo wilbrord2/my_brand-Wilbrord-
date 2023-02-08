@@ -183,7 +183,9 @@ getMessage.onclick = function () {
       modal.style.display = "none";
     };
   } else {
-    document.getElementById("modelmessage").innerHTML = `${statusResult}`;
+    document.getElementById(
+      "modelmessage"
+    ).innerHTML = `Thank you for your feedback`;
     okmodelbtn.onclick = function () {
       window.location.href = "login.html";
     };

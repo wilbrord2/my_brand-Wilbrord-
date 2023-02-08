@@ -162,11 +162,11 @@ const modal = document.getElementById("myModal");
 const btn = document.getElementById("Register");
 const span = document.getElementsByClassName("close")[0];
 const okmodelbtn = document.getElementById("modelSignup");
-let registerResult
+let registerResult;
 // When the user clicks the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
-  registerResult= async (data) => {
+  registerResult = async (data) => {
     statusResult = await data;
   };
   if (
@@ -181,7 +181,7 @@ btn.onclick = function () {
   } else {
     document.getElementById(
       "message"
-    ).innerHTML = `${statusResult}`;
+    ).innerHTML = `You have Successfull create an account you can now login !!`;
     console.log(statusResult);
     okmodelbtn.onclick = function () {
       window.location.href = "login.html";
