@@ -1,7 +1,6 @@
-"use strict";
-// rendering Articles
 const blogul = document.getElementById("Blog-list");
-
+const username = document.getElementById("user-name");
+const adminname = document.getElementById("admin-name");
 // RENDERING DATA FROM DATABASE
 
 const Token = JSON.parse(localStorage.getItem("myToken"));
@@ -10,9 +9,14 @@ if (!Token) {
 } else {
   const Authtoken = Token.token.data;
   const isLoggedin = Token.isLoggedin;
+  const accountOwnername = Token.token.name;
+  const accountOwnerEmail = Token.token.user;
   if (!isLoggedin && !Authtoken) {
     window.location.href = "login.html";
   } else {
+    username.innerHTML = `<h5>${accountOwnername}</h5>`;
+    adminname.innerHTML = `<h3>${accountOwnername}</h3>
+                            <h4>${accountOwnerEmail}</h4>`;
     // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
     const url = "http://localhost:3000/api/article/getAllArticle";
     fetch(url, {

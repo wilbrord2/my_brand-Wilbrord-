@@ -6,6 +6,8 @@ const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 const getMessage = document.getElementById("sendmessage");
 const listMessage = document.getElementById("List of message");
+const username = document.getElementById("user-name");
+const adminname = document.getElementById("admin-name");
 let Message = new Object();
 let statusResult = "make sure you fill the form correctly.";
 
@@ -18,10 +20,14 @@ if (!myToken) {
 } else {
   const authtoken = myToken.token.data;
   const isLoggedIn = myToken.isLoggedin;
-
+  const accountOwnername = myToken.token.name;
+  const accountOwnerEmail = myToken.token.user;
   if (!isLoggedIn && !authtoken) {
     window.location.href = "login.html";
   } else {
+    username.innerHTML = `<h5>${accountOwnername}</h5>`;
+    adminname.innerHTML = `<h3>${accountOwnername}</h3>
+                            <h4>${accountOwnerEmail}</h4>`;
     // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
     const url = "http://localhost:3000/api/messages/show";
     fetch(url, {

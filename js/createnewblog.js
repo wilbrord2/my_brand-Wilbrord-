@@ -2,6 +2,8 @@ const Btitle = document.getElementById("Btitle");
 const Bimage = document.getElementById("Bimage");
 const Bdescription = document.getElementById("Bdescription");
 const Bupload = document.getElementById("Bupload");
+const username = document.getElementById("user-name");
+const adminname = document.getElementById("admin-name");
 let statusResult = "make sure you fill the form correctly.";
 let blogObj;
 
@@ -12,9 +14,15 @@ if (!myToken) {
 } else {
   const authtoken = myToken.token.data;
   const isLoggedIn = myToken.isLoggedin;
+  const accountOwnername = myToken.token.name;
+  const accountOwnerEmail = myToken.token.user;
+
   if (!isLoggedIn && !authtoken) {
     window.location.href = "login.html";
   } else {
+    username.innerHTML = `<h5>${accountOwnername}</h5>`;
+    adminname.innerHTML = `<h3>${accountOwnername}</h3>
+                            <h4>${accountOwnerEmail}</h4>`;
     const createBlog = async (url, data) => {
       try {
         const response = await fetch(url, {

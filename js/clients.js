@@ -1,5 +1,6 @@
 const client = document.getElementById("list-of-clients");
-let Clients;
+const username = document.getElementById("user-name");
+const adminname = document.getElementById("admin-name");
 
 const myToken = JSON.parse(localStorage.getItem("myToken"));
 if (!myToken) {
@@ -7,11 +8,16 @@ if (!myToken) {
 } else {
   const authtoken = myToken.token.data;
   const isLoggedIn = myToken.isLoggedin;
+  const accountOwnername = myToken.token.name;
+  const accountOwnerEmail = myToken.token.user;
+
   if (!isLoggedIn && !authtoken) {
     window.location.href = "login.html";
   } else {
     // RENDERING DATA FROM DATABASE
-
+    username.innerHTML = `<h5>${accountOwnername}</h5>`;
+    adminname.innerHTML = `<h3>${accountOwnername}</h3>
+                            <h4>${accountOwnerEmail}</h4>`;
     // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/user/getAllUsers";
     const url = "http://localhost:3000/api/user/getAllUsers";
     fetch(url, {
