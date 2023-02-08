@@ -222,9 +222,19 @@ main {
   line-height: 20px;
   color: #353131;
 }
+.list-all-messages {
+  overflow-y: scroll;
+  height: 51vh;
+}
 .list-of-all-messages {
   overflow-y: scroll;
-  height: 50vh;
+  height: 65vh;
+}
+.list-all-messages li {
+  padding: 5px;
+  border-bottom: 1px solid #80808021;
+  display: flex;
+  align-items: center;
 }
 .list-of-all-messages li {
   padding: 5px;

@@ -13,37 +13,45 @@ let statusResult = "make sure you fill the form correctly.";
 
 const messageul = document.getElementById("list-of-message");
 const myToken = JSON.parse(localStorage.getItem("myToken"));
-const authtoken = myToken.token.data;
-const isLoggedIn = myToken.isLoggedin;
-
-if (!isLoggedIn && !authtoken) {
-  window.location.href = "login.html";
+if (!myToken) {
+  window.location.href = "/login.html";
 } else {
-  // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
-  const url = "http://localhost:3000/api/messages/show";
-  fetch(url, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json; charset=utf-8 ",
-      Authorization: `Bearer ${authtoken}`,
-      authtoken: `${authtoken}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => AllMessages(data))
-    .catch((error) => console.log(error));
+  const authtoken = myToken.token.data;
+  const isLoggedIn = myToken.isLoggedin;
 
-  function AllMessages(mess) {
-    for (let i = 0; i < mess.length; i++) {
-      messageul.appendChild(
-        createList(mess[i].name, mess[i].subject, mess[i].Message, mess[i].date)
-      );
+  if (!isLoggedIn && !authtoken) {
+    window.location.href = "login.html";
+  } else {
+    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
+    const url = "http://localhost:3000/api/messages/show";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json; charset=utf-8 ",
+        Authorization: `Bearer ${authtoken}`,
+        authtoken: `${authtoken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => AllMessages(data))
+      .catch((error) => console.log(error));
+
+    function AllMessages(mess) {
+      for (let i = 0; i < mess.length; i++) {
+        messageul.appendChild(
+          createList(
+            mess[i].name,
+            mess[i].subject,
+            mess[i].Message,
+            mess[i].date
+          )
+        );
+      }
     }
-  }
 
-  function createList(name, subject, message, date) {
-    const li = document.createElement("li");
-    li.innerHTML = `<div class="userProfile">
+    function createList(name, subject, message, date) {
+      const li = document.createElement("li");
+      li.innerHTML = `<div class="userProfile">
   <iconify-icon
     inline
     icon="mdi:user-circle"
@@ -61,10 +69,10 @@ if (!isLoggedIn && !authtoken) {
   </div>
   <p id="messagedate">${date}</p>
 </div>`;
-    return li;
+      return li;
+    }
   }
 }
-
 // CREATING A MESSAGE
 
 async function sendmessage(url, data) {

@@ -5,36 +5,39 @@ const blogul = document.getElementById("Blog-list");
 // RENDERING DATA FROM DATABASE
 
 const Token = JSON.parse(localStorage.getItem("myToken"));
-const Authtoken = Token.token.data;
-const isLoggedin = Token.isLoggedin;
-if (!isLoggedin && !Authtoken) {
-  window.location.href = "login.html";
+if (!Token) {
+  window.location.href = "/login.html";
 } else {
-  // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
-  const url = "http://localhost:3000/api/article/getAllArticle";
-  fetch(url, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json; charset=utf-8 ",
-      Authorization: `Bearer ${Authtoken}`,
-      authtoken: `${Authtoken}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => Articles(data))
-    .catch((error) => console.log(error));
+  const Authtoken = Token.token.data;
+  const isLoggedin = Token.isLoggedin;
+  if (!isLoggedin && !Authtoken) {
+    window.location.href = "login.html";
+  } else {
+    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+    const url = "http://localhost:3000/api/article/getAllArticle";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json; charset=utf-8 ",
+        Authorization: `Bearer ${Authtoken}`,
+        authtoken: `${Authtoken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => Articles(data))
+      .catch((error) => console.log(error));
 
-  function Articles(blog) {
-    blog.forEach((article) => {
-      blogul.appendChild(
-        createList(article.title, article.description, article.date)
-      );
-    });
-  }
+    function Articles(blog) {
+      blog.forEach((article) => {
+        blogul.appendChild(
+          createList(article.title, article.description, article.date)
+        );
+      });
+    }
 
-  function createList(title, Image, date, index) {
-    const li = document.createElement("li");
-    li.innerHTML = `<div class="blogImage">
+    function createList(title, Image, date, index) {
+      const li = document.createElement("li");
+      li.innerHTML = `<div class="blogImage">
   <img src="${Image}" alt="blog image"/>
 </div>
 <div class="user-message username">
@@ -87,6 +90,7 @@ if (!isLoggedin && !Authtoken) {
     </button>
   </span>
 </div>`;
-    return li;
+      return li;
+    }
   }
 }
