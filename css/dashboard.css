@@ -186,7 +186,7 @@ main {
 }
 .list-of-message,
 .list-of-comments {
-  width: 40%;
+  width: 45%;
   border: 2px solid rgba(128, 128, 128, 0.16);
 }
 .message-title {
@@ -232,20 +232,20 @@ main {
 }
 .list-all-messages li {
   padding: 5px;
-  border-bottom: 1px solid #80808021;
+  border-bottom: 1px solid #80808096;
   display: flex;
   align-items: center;
 }
 .list-of-all-messages li {
   padding: 5px;
-  border-bottom: 1px solid #80808021;
+  border-bottom: 1px solid #80808096;
   display: flex;
   align-items: center;
   /* justify-content: space-around; */
 }
 .list-of-all-comments li {
   padding: 5px;
-  border-bottom: 1px solid #80808021;
+  border-bottom: 1px solid #80808096;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -258,6 +258,14 @@ main {
 }
 .DBmessage {
   width: 60%;
+}
+.DBmessage h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: lowercase;
 }
 .user-message {
   width: 100%;
@@ -290,7 +298,8 @@ main {
   width: 30%;
 }
 .username h3 {
-  font-family: "Inter";
+  text-transform: lowercase;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 16px;

@@ -11,69 +11,6 @@ const adminname = document.getElementById("admin-name");
 let Message = new Object();
 let statusResult = "make sure you fill the form correctly.";
 
-// RENDERING USER MESSAGES
-
-const messageul = document.getElementById("list-of-message");
-const myToken = JSON.parse(localStorage.getItem("myToken"));
-// if (!myToken) {
-//   window.location.href = "/login.html";
-// } else {
-const authtoken = myToken.token.data;
-const isLoggedIn = myToken.isLoggedin;
-const accountOwnername = myToken.token.name;
-const accountOwnerEmail = myToken.token.user;
-if (!isLoggedIn && !authtoken) {
-  window.location.href = "login.html";
-} else {
-  username.innerHTML = `<h5>${accountOwnername}</h5>`;
-  adminname.innerHTML = `<h3>${accountOwnername}</h3>
-                            <h4>${accountOwnerEmail}</h4>`;
-  // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
-  const url = "http://localhost:3000/api/messages/show";
-  fetch(url, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json; charset=utf-8 ",
-      Authorization: `Bearer ${authtoken}`,
-      authtoken: `${authtoken}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => AllMessages(data))
-    .catch((error) => console.log(error));
-
-  function AllMessages(mess) {
-    for (let i = 0; i < mess.length; i++) {
-      messageul.appendChild(
-        createList(mess[i].name, mess[i].subject, mess[i].Message, mess[i].date)
-      );
-    }
-  }
-
-  function createList(name, subject, message, date) {
-    const li = document.createElement("li");
-    li.innerHTML = `<div class="userProfile">
-  <iconify-icon
-    inline
-    icon="mdi:user-circle"
-    style="color: #36383b"
-    width="50"
-  ></iconify-icon>
-</div>
-<div class="user-message">
-  <div class="username">
-    <h3 id="Username">${name}</h3>
-  </div>
-  <div id="message">
-  <h4 id="subject">${subject}</h4">
-   <p>${message}</p>
-  </div>
-  <p id="messagedate">${date}</p>
-</div>`;
-    return li;
-  }
-}
-// }
 // CREATING A MESSAGE
 
 async function sendmessage(url, data) {

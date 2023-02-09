@@ -39,7 +39,7 @@ if (!Token) {
       });
     }
 
-    function createList(title, Image, date, index) {
+    function createList(title, Image, index) {
       const li = document.createElement("li");
       li.innerHTML = `<div class="blogImage">
   <img src="${Image}" alt="blog image"/>
@@ -51,7 +51,6 @@ if (!Token) {
   </h3>
 </div>
 <div class="commentLike">
-  <span class="comments-time">${date}</span>
   <div class="like-and-comment">
     <span
       ><h4>60</h4>
