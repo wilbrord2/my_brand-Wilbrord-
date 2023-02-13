@@ -44,8 +44,10 @@ if (!isLoggedIn && !authtoken) {
 
   function AllMessages(mess) {
     for (let i = 0; i < mess.length; i++) {
+      var date = new Date(mess[i].date);
+      var shortDate = date.toLocaleDateString();
       messageul.appendChild(
-        createList(mess[i].name, mess[i].subject, mess[i].Message, mess[i].date)
+        createList(mess[i].name, mess[i].subject, mess[i].Message, shortDate)
       );
     }
   }

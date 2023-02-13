@@ -32,18 +32,22 @@ if (!Token) {
       .catch((error) => console.log(error));
 
     function Articles(blog) {
+      let i = 0;
       blog.forEach((article) => {
         blogul.appendChild(
-          createList(article.title, article.description, article.date)
+          createList(i++, article.title, article.description, article.date)
         );
       });
     }
 
-    function createList(title, Image, index) {
+    function createList(i, title, Image, index) {
       const li = document.createElement("li");
+
+      // <img src="${Image}" alt="blog image"/>
       li.innerHTML = `<div class="blogImage">
-  <img src="${Image}" alt="blog image"/>
+      <h3>${i + 1}</h3>
 </div>
+
 <div class="user-message username">
   <h3>
     ${title}
@@ -97,3 +101,6 @@ if (!Token) {
     }
   }
 }
+
+
+

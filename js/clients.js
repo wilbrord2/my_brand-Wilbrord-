@@ -34,8 +34,10 @@ if (!myToken) {
 
     function Allusers(users) {
       for (let i = 0; i < users.length; i++) {
+        var date = new Date(users[i].date);
+        var shortDate = date.toLocaleDateString();
         client.appendChild(
-          createList(users[i].name, users[i].email, users[i].date)
+          createList(users[i].name, users[i].email, shortDate)
         );
       }
       document.getElementById("countClients").textContent = users.length;
@@ -55,8 +57,8 @@ if (!myToken) {
   <div class="username">
     <h3>${name}</h3>
   </div>
-  <div class="comments-time">${date}</div>
   <p>${message}</p>
+  <div class="comments-time">${date}</div>
 </div>`;
       return li;
     }

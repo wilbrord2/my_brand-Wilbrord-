@@ -4,9 +4,14 @@ const Bdescription = document.getElementById("Bdescription");
 const Bupload = document.getElementById("Bupload");
 const username = document.getElementById("user-name");
 const adminname = document.getElementById("admin-name");
+// const input = document.querySelector('input[name="image"]');
 let statusResult = "make sure you fill the form correctly.";
 let blogObj;
-
+let imagefile;
+Bimage.addEventListener("change", function (event) {
+  imagefile = event.target.files[0];
+  console.log(imagefile);
+});
 // CREATING AN ARTICLE
 const myToken = JSON.parse(localStorage.getItem("myToken"));
 if (!myToken) {
@@ -23,7 +28,7 @@ if (!myToken) {
     username.innerHTML = `<h5>${accountOwnername}</h5>`;
     adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
-    const createBlog = async (url, data) => {
+    const createBlog = async (url, formdata) => {
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -31,13 +36,13 @@ if (!myToken) {
           cache: "no-cache",
           credentials: "same-origin",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": `Application/json`,
             Authorization: `Bearer ${authtoken}`,
             authtoken: `${authtoken}`,
           },
           redirect: "follow",
           referrerPolicy: "no-referrer",
-          body: JSON.stringify(data),
+          file: formdata,
         });
         return response.json();
       } catch (error) {
@@ -76,19 +81,19 @@ if (!myToken) {
         });
         return true;
       } else {
+        const formData = new FormData();
+        formData.append("image", imagefile);
         blogObj = {
           title: Btitle.value,
           description: blogDescription,
         };
+        formData.append("data", JSON.stringify(blogObj));
 
-        createBlog(
-          "https://wilbrord-mybrand-backend.up.railway.app/api/article/createArticle",
-          blogObj
-        )
+        // "https://wilbrord-mybrand-backend.up.railway.app/api/article/createArticle",
+
+        createBlog("http://localhost:3000/api/article/createArticle", formData)
           .then((data) => registerResult(data))
           .catch((err) => console.log(err.message));
-        // blogarr.push(blogObj);
-        //window.localStorage.setItem(`Blog`, JSON.stringify(blogarr));
 
         Btitle.value = "";
         Bimage.value = "";
@@ -107,21 +112,23 @@ if (!myToken) {
     Bupload.onclick = function () {
       modal.style.display = "block";
       registerResult = async (data) => {
+        console.log(data);
         statusResult = await data;
-        console.log(statusResult);
       };
       if (
         statusResult !== "Thank you for your feedback" ||
         statusResult !== ""
       ) {
         document.getElementById("modelmessage").innerHTML = `${statusResult}`;
-        okmodelbtn.onclick = function () {
+        okmodelbtn.onclick = function (e) {
+          e.preventDefault();
           modal.style.display = "none";
         };
       } else {
         document.getElementById("modelmessage").innerHTML = `${statusResult}`;
         okmodelbtn.onclick = function () {
-          window.location.href = "login.html";
+          e.preventDefault();
+          modal.style.display = "none";
         };
       }
     };

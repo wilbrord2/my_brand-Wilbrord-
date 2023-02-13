@@ -237,6 +237,7 @@ main {
   align-items: center;
 }
 .list-of-all-messages li {
+  cursor: pointer;
   padding: 5px;
   border-bottom: 1px solid #80808096;
   display: flex;
@@ -249,12 +250,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 0.5rem;
 }
 .userProfile {
   padding: 5px;
 }
 .blogImage {
-  width: 30%;
+  width: 5%;
+  text-align: center;
 }
 .DBmessage {
   width: 60%;
@@ -311,6 +314,13 @@ main {
   color: #999;
   font-size: 11px;
   padding: 6px;
+}
+#cars {
+  padding: 5px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-left: 10px;
 }
 .hidden {
   display: none;

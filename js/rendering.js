@@ -42,12 +42,14 @@ if (!myToken) {
 
     function AllMessages(mess) {
       for (let i = mess.length - 1; i > mess.length - 6; i--) {
+        var date = new Date( mess[i].date);
+        var shortDate = date.toLocaleDateString();
         messageul.appendChild(
           createList(
             mess[i].name,
             mess[i].subject,
             mess[i].Message,
-            mess[i].date
+            shortDate
           )
         );
       }
@@ -100,16 +102,20 @@ if (!myToken) {
       .catch((error) => console.log(error));
 
     function Articles(blog) {
-      for (let i = blog.length - 1; i > blog.length - 4; i--) {
-        blogul.appendChild(createList(blog[i].title, blog[i].date));
+      for (let i = blog.length - 1; i > blog.length - 6; i--) {
+        //var date = moment(blog[i].date).format("MM/DD/YYYY");
+        var date = new Date(blog[i].date);
+        var shortDate = date.toLocaleDateString();
+        blogul.appendChild(createList(blog.length - i, blog[i].title, shortDate));
       }
       document.getElementById("countArticles").textContent = blog.length;
     }
 
-    function createList(title, date, Image) {
+    function createList(i, title, date, Image) {
       const li = document.createElement("li");
       li.innerHTML = `<div class="blogImage">
-  <img src="${Image}" alt="blog image"/>
+ 
+      <h3>${i}</h3>
 </div>
 <div class="user-message DBmessage">
   <h3>
