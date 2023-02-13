@@ -98,11 +98,11 @@
           <h1>Create new Article</h1>
         </section>
         <section class="user-request cnarticle">
-          <form action="">
+          <form action="" id="blogform">
             <div class="input-form">
               <div class="input-group row">
                 <label for="">Article title</label>
-                <input type="text" name="" id="Btitle" />
+                <input type="text" name="title" id="Btitle" />
               </div>
             </div>
             <div id="uploadImage" class="input-form">
@@ -116,14 +116,14 @@
               <div class="input-group row">
                 <label for="">Article Description</label>
                 <textarea
-                  name=""
+                  name="description"
                   id="Bdescription"
                   cols="20"
                   rows="10"
                 ></textarea>
               </div>
             </div>
-            <button id="Bupload" class="row">Upload</button>
+            <button id="Bupload" type="submit" class="row">Upload</button>
             <div id="myModal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>

@@ -102,16 +102,9 @@
       <main>
         <aside class="list-of-blogs">
           <h2>List of Blog</h2>
-          <ul>
-            <li>Blog 1</li>
-            <li>Blog 2</li>
-            <li>Blog 3</li>
-            <li>Blog 4</li>
-            <li>Blog 5</li>
-            <li>Blog 6</li>
-          </ul>
+          <ul id="blogslist"></ul>
         </aside>
-        <div class="blog-contents">
+        <div class="blog-contents" id="blogcontent">
           <div class="blog-title">
             <h1>
               Andela Lead the future Technical Leadership Program (ATLP) 2022
@@ -125,9 +118,18 @@
           <div class="blog-icons">
             <div class="card-title card-logo">
               <iconify-icon
+                id="likes"
                 inline
                 icon="mdi:cards-heart-outline"
                 style="color: #1a559b"
+                width="25"
+                height="25"
+              ></iconify-icon>
+              <iconify-icon
+                id="dislike"
+                class="hidden"
+                icon="ph:heart-straight-duotone"
+                style="color: red"
                 width="25"
                 height="25"
               ></iconify-icon>
@@ -225,21 +227,24 @@
               <input
                 type="text"
                 name=""
-                id=""
+                id="username"
                 placeholder="Enter your name"
                 required
               />
+              <div class="error hidden"></div>
               <label for="user name">Email</label>
               <input
                 type="email"
                 name=""
-                id=""
+                id="useremail"
                 placeholder="Enter your name"
                 required
               />
+              <div class="error hidden"></div>
               <label for="add comment">Add your Comment</label>
-              <textarea name="" id="" cols="30" rows="5"></textarea>
-              <button class="Btn">send</button>
+              <textarea name="" id="comment" cols="30" rows="5"></textarea>
+              <div class="error hidden"></div>
+              <button id="sendcomment" class="Btn">send</button>
             </form>
           </div>
         </div>
@@ -305,5 +310,6 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
     <script src="/js/index.js"></script>
+    <script src="/js/blog.js"></script>
   </body>
 </html>

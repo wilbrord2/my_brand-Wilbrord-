@@ -10,7 +10,6 @@ let blogObj;
 let imagefile;
 Bimage.addEventListener("change", function (event) {
   imagefile = event.target.files[0];
-  console.log(imagefile);
 });
 // CREATING AN ARTICLE
 const myToken = JSON.parse(localStorage.getItem("myToken"));
@@ -28,6 +27,7 @@ if (!myToken) {
     username.innerHTML = `<h5>${accountOwnername}</h5>`;
     adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
+
     const createBlog = async (url, formdata) => {
       try {
         const response = await fetch(url, {
@@ -36,13 +36,15 @@ if (!myToken) {
           cache: "no-cache",
           credentials: "same-origin",
           headers: {
-            "Content-Type": `Application/json`,
+            Accept:
+              "application/json, application/xml, text/plain, text/html, *.*",
+            // "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${authtoken}`,
             authtoken: `${authtoken}`,
           },
           redirect: "follow",
           referrerPolicy: "no-referrer",
-          file: formdata,
+          body: formdata,
         });
         return response.json();
       } catch (error) {
@@ -83,12 +85,11 @@ if (!myToken) {
       } else {
         const formData = new FormData();
         formData.append("image", imagefile);
-        blogObj = {
-          title: Btitle.value,
-          description: blogDescription,
-        };
-        formData.append("data", JSON.stringify(blogObj));
-
+        formData.append("title", Btitle.value);
+        formData.append("description", blogDescription);
+        for (var pair of formData.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
         // "https://wilbrord-mybrand-backend.up.railway.app/api/article/createArticle",
 
         createBlog("http://localhost:3000/api/article/createArticle", formData)
