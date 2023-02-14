@@ -18,8 +18,9 @@ if (!myToken) {
     username.innerHTML = `<h5>${accountOwnername}</h5>`;
     adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
-    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/user/getAllUsers";
-    const url = "http://localhost:3000/api/user/getAllUsers";
+    const url =
+      "https://wilbrord-mybrand-backend.up.railway.app/api/user/getAllUsers";
+    //const url = "http://localhost:3000/api/user/getAllUsers";
     fetch(url, {
       method: "GET",
       headers: {

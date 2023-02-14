@@ -15,19 +15,13 @@ if (!myToken) {
   if (!isLoggedIn) {
     window.location.href = "login.html";
   } else {
-    // if (
-    //   accountOwnerEmail !== "wilbrord@gmail.com" &&
-    //   accountOwnername !== "ibyimana Wilbrord"
-    // ) {
-    //   console.log("welcome", accountOwnername);
-    //   window.location.href = "userAcessPage.html";
-    // } else {
     username.innerHTML = `<h5>${accountOwnername}</h5>`;
     adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
 
-    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
-    const url = "http://localhost:3000/api/messages/show";
+    const url =
+      "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
+    //const url = "http://localhost:3000/api/messages/show";
     fetch(url, {
       method: "GET",
       headers: {
@@ -42,15 +36,10 @@ if (!myToken) {
 
     function AllMessages(mess) {
       for (let i = mess.length - 1; i > mess.length - 6; i--) {
-        var date = new Date( mess[i].date);
+        var date = new Date(mess[i].date);
         var shortDate = date.toLocaleDateString();
         messageul.appendChild(
-          createList(
-            mess[i].name,
-            mess[i].subject,
-            mess[i].Message,
-            shortDate
-          )
+          createList(mess[i].name, mess[i].subject, mess[i].Message, shortDate)
         );
       }
       document.getElementById("countMessage").textContent = mess.length;
@@ -87,8 +76,9 @@ if (!myToken) {
   if (!isLoggedIn && !authtoken) {
     window.location.href = "login.html";
   } else {
-    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
-    const url = "http://localhost:3000/api/article/getAllArticle";
+    const url =
+      "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+    //const url = "http://localhost:3000/api/article/getAllArticle";
     fetch(url, {
       method: "GET",
       headers: {
@@ -102,17 +92,20 @@ if (!myToken) {
       .catch((error) => console.log(error));
 
     function Articles(blog) {
-      for (let i = blog.length - 1; i > blog.length - 6; i--) {
-        //var date = moment(blog[i].date).format("MM/DD/YYYY");
-        var date = new Date(blog[i].date);
-        var shortDate = date.toLocaleDateString();
-        blogul.appendChild(createList(blog.length - i, blog[i].title, shortDate));
-      }
       document.getElementById("countArticles").textContent = blog.length;
+      // console.log(blog.length);
+      for (let i = blog.length - 1; i > blog.length - 6; i--) {
+        blogul.appendChild(
+          createList(blog.length - i, blog[i].title, blog[i].date)
+        );
+      }
     }
 
-    function createList(i, title, date, Image) {
+    function createList(i, title, date) {
+      var data = new Date(date);
+      var shortDate = data.toLocaleDateString();
       const li = document.createElement("li");
+
       li.innerHTML = `<div class="blogImage">
  
       <h3>${i}</h3>
@@ -123,7 +116,7 @@ if (!myToken) {
 
   </h3>
 </div>
-  <span class="comments-time">${date}</span>
+  <span class="comments-time">${shortDate}</span>
 
 `;
       return li;
@@ -135,8 +128,9 @@ if (!myToken) {
     window.location.href = "login.html";
   } else {
     // RENDERING DATA FROM DATABASE
-    // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/user/getAllUsers";
-    const url = "http://localhost:3000/api/user/getAllUsers";
+    const url =
+      "https://wilbrord-mybrand-backend.up.railway.app/api/user/getAllUsers";
+    //const url = "http://localhost:3000/api/user/getAllUsers";
     fetch(url, {
       method: "GET",
       headers: {

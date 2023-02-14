@@ -90,9 +90,10 @@ if (!myToken) {
         for (var pair of formData.entries()) {
           console.log(pair[0] + ", " + pair[1]);
         }
-        // "https://wilbrord-mybrand-backend.up.railway.app/api/article/createArticle",
-
-        createBlog("http://localhost:3000/api/article/createArticle", formData)
+        const url =
+          "https://wilbrord-mybrand-backend.up.railway.app/api/article/createArticle";
+        // const url = "http://localhost:3000/api/article/createArticle";
+        createBlog(url, formData)
           .then((data) => registerResult(data))
           .catch((err) => console.log(err.message));
 

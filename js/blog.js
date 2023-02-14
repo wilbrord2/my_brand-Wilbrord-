@@ -1,6 +1,7 @@
 const blogul = document.getElementById("blogslist");
 let ids = [];
 let count = 0;
+
 // RENDERING DATA FROM DATABASE
 
 // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
@@ -80,14 +81,6 @@ const getOneArticle = (id) => {
       .then((data) => allcommentonarticle(data))
       .catch((error) => console.log(error));
 
-    const allcommentonarticle = (comment) => {
-      for (let i = 0; i < comment.length; i++) {
-        if (comment[i].blogid == id) {
-          console.log(comment[i]._id);
-        }
-      }
-    };
-
     document.getElementById("blogcontent").innerHTML = `
           <div class="blog-title">
             <h1>
@@ -140,60 +133,7 @@ const getOneArticle = (id) => {
           </div>
           <div class="blog-comments">
             <h2>Comments</h2>
-            <ul>
-              <div class="userProfile">
-                <iconify-icon
-                  inline
-                  icon="mdi:user-circle"
-                  style="color: #36383b"
-                  width="50"
-                ></iconify-icon>
-              </div>
-              <div class="username">
-                <h3>Uwiduhaye Janne</h3>
-                <div class="comments-time">11/12/2022 1:34pm</div>
-              </div>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-
-              <div class="userProfile">
-                <iconify-icon
-                  inline
-                  icon="mdi:user-circle"
-                  style="color: #36383b"
-                  width="50"
-                ></iconify-icon>
-              </div>
-              <div class="username">
-                <h3>Uwiduhaye Janne</h3>
-                <div class="comments-time">11/12/2022 1:34pm</div>
-              </div>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <div class="userProfile">
-                <iconify-icon
-                  inline
-                  icon="mdi:user-circle"
-                  style="color: #36383b"
-                  width="50"
-                ></iconify-icon>
-              </div>
-              <div class="username">
-                <h3>Uwiduhaye Janne</h3>
-                <div class="comments-time">11/12/2022 1:34pm</div>
-              </div>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <div class="userProfile">
-                <iconify-icon
-                  inline
-                  icon="mdi:user-circle"
-                  style="color: #36383b"
-                  width="50"
-                ></iconify-icon>
-              </div>
-              <div class="username">
-                <h3>Uwiduhaye Janne</h3>
-                <div class="comments-time">11/12/2022 1:34pm</div>
-              </div>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <ul id="singleblogcomment">
             </ul>
           </div>
           <div class="add-comment">
@@ -222,6 +162,45 @@ const getOneArticle = (id) => {
             <button id="sendcomment" class="Btn">send</button>
           </form>
         </div>  `;
+    const commentul = document.getElementById("singleblogcomment");
+    const allcommentonarticle = (comment) => {
+      for (let i = 0; i < comment.length; i++) {
+        if (comment[i].blogid == id) {
+          //  console.log(comment);
+          const li = addcommentlist(
+            comment[i].name,
+            comment[i].comment,
+            comment[i].date
+          );
+          //console.log(li);
+          commentul.appendChild(li);
+        }
+      }
+    };
+    function addcommentlist(name, comment, date) {
+      // console.log(name, comment, date);
+      var date = new Date(date);
+      var shortDate = date.toLocaleDateString();
+      const li = document.createElement("li");
+      li.innerHTML = `
+          <div class="userProfile">
+            <iconify-icon
+              inline
+              icon="mdi:user-circle"
+              style="color: #36383b"
+              width="50"
+            ></iconify-icon>
+          </div>
+          <div>
+          <div class="username">
+            <h3>${name}</h3>
+            <div class="comments-time">${shortDate}</div>
+          </div>
+          <p>${comment}.<p>
+          </div>`;
+
+      return li;
+    }
 
     const like = document.getElementById("likes");
     const dislike = document.getElementById("dislike");
@@ -273,6 +252,10 @@ const getOneArticle = (id) => {
         )
           .then((data) => console.log(data))
           .catch((err) => console.log(err.message));
+        username.textContent = "";
+        useremail.textContent = "";
+        comment.textContent = "";
+        // window.onload();
       }
     });
 

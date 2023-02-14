@@ -28,8 +28,8 @@ if (!isLoggedIn && !authtoken) {
   username.innerHTML = `<h5>${accountOwnername}</h5>`;
   adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
-  // const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
-  const url = "http://localhost:3000/api/messages/show";
+ const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
+  //const url = "http://localhost:3000/api/messages/show";
   fetch(url, {
     method: "GET",
     headers: {
@@ -169,6 +169,7 @@ const okmodelbtn = document.getElementById("modelSignup");
 let registerResult;
 // When the user clicks the button, open the modal
 getMessage.onclick = function () {
+  let statusResult = "make sure you fill the form correctly.";
   modal.style.display = "block";
   registerResult = async (data) => {
     statusResult = await data;

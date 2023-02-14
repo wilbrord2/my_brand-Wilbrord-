@@ -7,6 +7,8 @@
     <title>Wilbrord</title>
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link rel="stylesheet" href="/css/message.css" />
+    <link rel="stylesheet" href="/css/createnewarticle.css" />
+    <link rel="stylesheet" href="/css/validation.css" />
     <link rel="stylesheet" href="/css/allarticle.css" />
   </head>
   <body>
@@ -100,23 +102,102 @@
             <div id="List of message" class="message-title">
               <span class="title"><h3>ALL ARTICLES</h3></span>
               <span class="view-more"
-                ><h4>Sort by</h4><select name="cars" id="cars">
+                ><h4>Sort by</h4>
+                <select name="cars" id="cars">
                   <option value="volvo">Date(Newest)</option>
                   <option value="saab">Date(Oldest)</option>
                   <option value="opel">Name</option>
                 </select>
-                <!-- <span class="stati-descr">
-                  <iconify-icon
-                    inline
-                    icon="material-symbols:arrow-drop-down-rounded"
-                    style="color: #585454"
-                    width="20"
-                  ></iconify-icon>
-                </span> -->
               </span>
             </div>
             <div class="list-of-all-messages">
               <ul id="Blog-list"></ul>
+              <div id="confirmation-modal" class="modal">
+                <div class="modal-content">
+                  <p>Delete or Update this Article!!</p>
+                  <div class="modal-buttons">
+                    <button id="cancel-button" class="cancel-button">
+                      Cancel
+                    </button>
+                    <button id="update-button" class="update-button">
+                      update
+                    </button>
+                    <button id="delete-button">Delete</button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="Dconfirmation-modal" class="modal">
+                <div class="modal-content">
+                  <p>Are you sure you want to delete this?</p>
+                  <div class="modal-buttons">
+                    <button id="Ddelete-button">Delete</button>
+                    <button id="Dcancel-button" class="cancel-button">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="Uconfirmation-modal" class="modal">
+                <div class="modal-content-update">
+                  <section class="user-request cnarticle">
+                    <form action="" id="blogform">
+                      <div class="input-form">
+                        <div class="input-group row">
+                          <label for="">Article title</label>
+                          <input type="text" name="title" id="Btitle" />
+                        </div>
+                      </div>
+                      <div id="uploadImage" class="input-form">
+                        <div class="input-group row">
+                          <label for="">Article Image</label>
+
+                          <input type="file" name="image" id="Bimage" />
+                        </div>
+                      </div>
+                      <div class="input-form">
+                        <div class="input-group row">
+                          <label for="">Article Description</label>
+                          <textarea
+                            name="description"
+                            id="Bdescription"
+                            cols="20"
+                            rows="10"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <!-- <button id="Bupload" type="submit" class="row">
+                        Upload
+                      </button> -->
+                      <div id="myModal" class="modal">
+                        <div class="modal-content">
+                          <span class="close">&times;</span>
+
+                          <div class="header">
+                            <h2>Messages</h2>
+                          </div>
+                          <div class="modelmessage">
+                            <p id="modelmessage"></p>
+                          </div>
+                          <div class="modelbutton">
+                            <button id="modelSignup" class="btn modelBtn">
+                              ok
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </section>
+                  <div class="modal-buttons">
+                    <button id="Uupdate-button" class="update-button">
+                      Update
+                    </button>
+                    <button id="Ucancel-button" class="cancel-button">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
