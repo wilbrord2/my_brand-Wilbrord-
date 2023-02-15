@@ -8,6 +8,14 @@
 body::-webkit-scrollbar {
   display: none;
 }
+#loader {
+  background: rgb(255 255 255) url(/Images/GIF/dotes.gif) center center
+    no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+}
 ul {
   list-style: none;
 }
