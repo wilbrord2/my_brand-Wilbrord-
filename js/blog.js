@@ -1,43 +1,51 @@
 const blogul = document.getElementById("blogslist");
+const load = document.getElementById("loader");
 let ids = [];
 let count = 0;
 
 // RENDERING DATA FROM DATABASE
 
-// const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
-const url =
-  "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
-fetch(url, {
-  method: "GET",
-  headers: {
-    "content-type": "application/json; charset=utf-8 ",
-  },
-})
-  .then((res) => res.json())
-  .then((data) => Articles(data))
-  .catch((error) => console.log(error));
-
-function Articles(blogs) {
-  let i = 0;
-  // console.log(blogs);
-  blogs.forEach((article) => {
-    ids.push(article._id);
-    blogul.appendChild(createList(i++, article.title, article._id));
-  });
-  blogul.addEventListener("click", (event) => {
-    if (event.target.tagName === "LI") {
-      const liId = blogs[event.target.id]._id;
-      //  console.log(liId);
-      getOneArticle(liId);
-    }
-  });
+load.style.display = "block";
+function loading() {
+  load.style.display = "none";
 }
+// const url = "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+function rendArticle() {
+  const url =
+    "https://wilbrord-mybrand-backend.up.railway.app/api/article/getAllArticle";
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json; charset=utf-8 ",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => Articles(data))
+    .catch((error) => console.log(error));
 
-function createList(i, title) {
-  const li = document.createElement("li");
-  li.id = `${i}`;
-  // <img src="${Image}" alt="blog image"/>
-  li.innerHTML = `<div >
+  function Articles(blogs) {
+    let i = 0;
+    // console.log(blogs);
+    blogs.forEach((article) => {
+      ids.push(article._id);
+      blogul.appendChild(createList(i++, article.title, article._id));
+    });
+    loading();
+    blogul.addEventListener("click", (event) => {
+      load.style.display = "block";
+      if (event.target.tagName === "LI") {
+        const liId = blogs[event.target.id]._id;
+        //  console.log(liId);
+        getOneArticle(liId);
+      }
+    });
+  }
+
+  function createList(i, title) {
+    const li = document.createElement("li");
+    li.id = `${i}`;
+    // <img src="${Image}" alt="blog image"/>
+    li.innerHTML = `<div >
       <h3>${i + 1}</h3>
 </div>
 
@@ -46,9 +54,11 @@ function createList(i, title) {
     ${title}
   </h3>
 </div>`;
-  return li;
+    return li;
+  }
 }
 
+rendArticle();
 // GET A SINGLE ARTICLE
 
 const getOneArticle = (id) => {
@@ -67,21 +77,21 @@ const getOneArticle = (id) => {
     //console.log(blog);
     var date = new Date(blog.date);
     var shortDate = date.toLocaleDateString();
+    function listcomment() {
+      //RENDERING COMMENTS
+      const url =
+        "https://wilbrord-mybrand-backend.up.railway.app/api/commentandlike/getcomment";
+      fetch(url, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json; charset=utf-8 ",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => allcommentonarticle(data))
+        .catch((error) => console.log(error));
 
-    //RENDERING COMMENTS
-    const url =
-      "https://wilbrord-mybrand-backend.up.railway.app/api/commentandlike/getcomment";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json; charset=utf-8 ",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => allcommentonarticle(data))
-      .catch((error) => console.log(error));
-
-    document.getElementById("blogcontent").innerHTML = `
+      document.getElementById("blogcontent").innerHTML = `
           <div class="blog-title">
             <h1>
              ${blog.title}
@@ -133,6 +143,7 @@ const getOneArticle = (id) => {
           </div>
           <div class="blog-comments">
             <h2>Comments</h2>
+            <div id="commentloader"></div>
             <ul id="singleblogcomment">
             </ul>
           </div>
@@ -162,21 +173,33 @@ const getOneArticle = (id) => {
             <button id="sendcomment" class="Btn">send</button>
           </form>
         </div>  `;
-    const commentul = document.getElementById("singleblogcomment");
-    const allcommentonarticle = (comment) => {
-      for (let i = 0; i < comment.length; i++) {
-        if (comment[i].blogid == id) {
-          //  console.log(comment);
-          const li = addcommentlist(
-            comment[i].name,
-            comment[i].comment,
-            comment[i].date
-          );
-          //console.log(li);
-          commentul.appendChild(li);
+
+      const commentul = document.getElementById("singleblogcomment");
+      const comloader = document.getElementById("commentloader");
+
+      let allcommentonarticle;
+
+      allcommentonarticle = (comment) => {
+        function commnetLoading() {
+          comloader.style.display = "none";
         }
-      }
-    };
+
+        for (let i = 0; i < comment.length; i++) {
+          if (comment[i].blogid == id) {
+            //  console.log(comment);
+            const li = addcommentlist(
+              comment[i].name,
+              comment[i].comment,
+              comment[i].date
+            );
+            //console.log(li);
+            commentul.appendChild(li);
+          }
+          commnetLoading();
+        }
+      };
+    }
+    listcomment();
     function addcommentlist(name, comment, date) {
       // console.log(name, comment, date);
       var date = new Date(date);
@@ -201,7 +224,6 @@ const getOneArticle = (id) => {
 
       return li;
     }
-
     const like = document.getElementById("likes");
     const dislike = document.getElementById("dislike");
 
@@ -246,17 +268,20 @@ const getOneArticle = (id) => {
           likes: count,
         };
         // console.log(objcomment);
+
         SendComment(
           "https://wilbrord-mybrand-backend.up.railway.app/api/commentandlike/savecomment",
           objcomment
         )
           .then((data) => console.log(data))
           .catch((err) => console.log(err.message));
+
         username.textContent = "";
         useremail.textContent = "";
         comment.textContent = "";
         // window.onload();
       }
+      listcomment();
     });
 
     async function SendComment(url, data) {
@@ -277,6 +302,8 @@ const getOneArticle = (id) => {
       } catch (error) {
         console.log("error generated", error);
       }
+      comloader.style.display = "block";
     }
+    loading();
   }
 };

@@ -52,6 +52,14 @@ main {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
+#commentloader {
+  background: #fcfefc url(/Images/GIF/preloader.gif) center center no-repeat;
+  position: relative;
+  width: 100%;
+  background-size: 50%;
+  height: 20vh;
+  z-index: 9999;
+}
 .blog-comments {
   /* border: 1px solid; */
   background: #e7ebe0;
