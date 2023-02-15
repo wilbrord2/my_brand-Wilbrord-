@@ -420,7 +420,7 @@ li span {
 }
 .card {
   width: 352px;
-  height: 405px;
+  height: auto;
   background: #ffffff;
   border-radius: 10px 10px 30px 30px;
   filter: drop-shadow(10px 20px 50px #d5d7dd);
@@ -452,6 +452,10 @@ li span {
   letter-spacing: 0.1em;
   color: #000000;
   margin: 10px 0px;
+}
+
+.card-body {
+  margin-top: 5%;
 }
 .card-body p {
   font-family: "Times New Roman";
@@ -493,7 +497,7 @@ li span {
 
 .nav-blog h2 {
   text-align: center;
-  margin: 25px;
+  /* margin: 25px; */
   font-size: 30px;
   font-style: italic;
   font-weight: 700;
