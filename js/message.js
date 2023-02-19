@@ -28,7 +28,8 @@ if (!isLoggedIn && !authtoken) {
   username.innerHTML = `<h5>${accountOwnername}</h5>`;
   adminname.innerHTML = `<h3>${accountOwnername}</h3>
                             <h4>${accountOwnerEmail}</h4>`;
- const url = "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
+  const url =
+    "https://wilbrord-mybrand-backend.up.railway.app/api/messages/show";
   //const url = "http://localhost:3000/api/messages/show";
   fetch(url, {
     method: "GET",
@@ -76,6 +77,7 @@ if (!isLoggedIn && !authtoken) {
   }
 }
 // }
+
 // CREATING A MESSAGE
 
 async function sendmessage(url, data) {
@@ -144,6 +146,7 @@ getMessage.addEventListener("click", function (e) {
       subject: subject.value,
       message: message.value,
     };
+    console.log(Message);
     sendmessage(
       "https://wilbrord-mybrand-backend.up.railway.app/api/messages/save",
       Message
@@ -201,3 +204,8 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+
+
+
+

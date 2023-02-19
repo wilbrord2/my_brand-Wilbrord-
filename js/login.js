@@ -91,7 +91,10 @@ LoginBtn.addEventListener("click", function (e) {
   };
   let userToken = [];
 
-  loginguser("http://localhost:3000/api/user/login", userCredentials)
+  loginguser(
+    "https://wilbrord-mybrand-backend.up.railway.app/api/user/login",
+    userCredentials
+  )
     .then((data) => {
       Alloweduser(data);
     })

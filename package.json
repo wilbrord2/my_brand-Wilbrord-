@@ -1,0 +1,24 @@
+{
+  "name": "my-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilbrord2/my_brand-Wilbrord-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilbrord2/my_brand-Wilbrord-/issues"
+  },
+  "homepage": "https://github.com/wilbrord2/my_brand-Wilbrord-#readme",
+  "dependencies": {
+    "@babel/cli": "^7.20.7",
+    "babel-preset-react-app": "^10.0.1"
+  }
+}
